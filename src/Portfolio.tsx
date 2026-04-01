@@ -40,8 +40,8 @@ const useCountUp = (end: number, duration = 2000) => {
 const SECTIONS = [
   { id: 'hero', label: 'Hello', num: '01', color: '#FF5C00' },
   { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
-  { id: 'work', label: 'Work', num: '03', color: '#000000' },
-  { id: 'impact', label: 'Talent', num: '04', color: '#007AFF' },
+  { id: 'work', label: "What I've Built", num: '03', color: '#000000' },
+  { id: 'impact', label: 'By the Numbers', num: '04', color: '#007AFF' },
   { id: 'career', label: 'Careers', num: '05', color: '#FF0050' },
   { id: 'agents', label: 'Agents', num: '06', color: '#00C853' },
   { id: 'contact', label: 'Contact', num: '07', color: '#FFFF00' },
@@ -59,10 +59,10 @@ const stats = [
 ];
 
 const career = [
-  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', company: 'Kellanova', desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%. 91% offer accept rate across ~300 hires in 2024.' },
-  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', company: 'Uber', desc: 'Promoted within six months — only Sourcing Manager overseeing four verticals. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
-  { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders.' },
-  { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units.' },
+  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', company: "Kellanova (previously Kellogg's)", desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%. Oversee hiring for 11 Corporate Functions, managing top performing team in North America. 91% offer accept rate across ~300 hires in 2024.' },
+  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', company: 'Uber', desc: 'Promoted within six months — only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
+  { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders. Only team member out of 45 promoted in 2020. Sourcing across NAMR, EMEA, and APAC.' },
+  { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units. Managed $60K conference budget.' },
   { period: 'Aug 2014 – Sep 2015', current: false, title: 'Affiliate Account Manager', company: 'Cars.com', desc: 'Account management bridging sales and customer success in automotive digital marketplace.' },
   { period: 'Aug 2012 – Aug 2014', current: false, title: 'Technical Recruiter', company: 'Brooksource', desc: 'Foundation in high-volume technical recruiting and client relationship management.' },
 ];
@@ -76,10 +76,10 @@ const competencies = [
 const techStack = ['Canva', 'ChatGPT', 'Claude', 'Copilot', 'Gamma', 'Gemini', 'LinkedIn Talent Insights', 'MindStudio', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron'];
 
 const projects = [
-  { category: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data' },
-  { category: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts' },
-  { category: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest' },
-  { category: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events' },
+  { category: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://claude.ai/public/artifacts/bdc651fc-f368-448d-8cf5-c5ef6ee939d8' },
+  { category: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://claude.ai/public/artifacts/786c8e3a-718b-419d-8d3b-2cc7be995ef6' },
+  { category: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://claude.ai/public/artifacts/0a534c36-3f73-4e55-9a05-2ce219a46b71' },
+  { category: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events', url: 'https://claude.ai/public/artifacts/3f65ee84-9dc0-426b-8880-62f4573ebcdb' },
 ];
 
 const agents = [
@@ -250,6 +250,45 @@ const Portfolio = () => {
         .brutalist-btn-light {
           background: transparent; color: #000;
         }
+
+        .tech-pill {
+          padding: 8px 18px;
+          border-radius: 999px;
+          border: 2px solid rgba(255,255,255,0.5);
+          font-size: 14px;
+          font-weight: 600;
+          color: #fff;
+          transition: all 0.25s ease;
+          cursor: default;
+        }
+        .tech-pill:hover {
+          background: rgba(255,255,255,0.15);
+          border-color: #fff;
+          transform: translateY(-2px);
+        }
+
+        .stat-card {
+          background: #fff;
+          border-radius: 20px;
+          padding: 28px 24px;
+          color: #000;
+          transition: all 0.25s ease;
+        }
+        .stat-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .credential-card {
+          background: rgba(255,255,255,0.15);
+          border-radius: 20px;
+          padding: 24px;
+          transition: all 0.25s ease;
+        }
+        .credential-card:hover {
+          background: rgba(255,255,255,0.22);
+          transform: translateY(-2px);
+        }
       `}</style>
 
       {/* ===== SIDEBAR (Desktop) — Block card nav ===== */}
@@ -333,8 +372,10 @@ const Portfolio = () => {
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 32, flexWrap: 'wrap', gap: 24 }}>
               <div>
                 <p style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 500, color: '#000', maxWidth: 500, lineHeight: 1.5 }}>
-                  Senior Manager, TA & AI Enablement at Kellanova.<br />
-                  Building AI agents for talent acquisition.
+                  Senior Manager, TA & AI Enablement at Kellanova.
+                </p>
+                <p style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 500, color: '#000', maxWidth: 500, lineHeight: 1.5, marginTop: 16 }}>
+                  Accelerating AI in Talent Acquisition.
                 </p>
                 <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.6)', marginTop: 8 }}>📍 Greater Chicago Area</p>
               </div>
@@ -348,7 +389,7 @@ const Portfolio = () => {
               }}>
                 <span style={{ fontSize: 48, fontWeight: 700, color: '#FF5C00', position: 'absolute' }}>MH</span>
                 <img
-                  src="/headshot.jpg"
+                  src={`${import.meta.env.BASE_URL}headshot.jpg`}
                   alt="Michael Hartman"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'relative', zIndex: 1 }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -401,7 +442,7 @@ const Portfolio = () => {
                   ))}
                 </div>
                 <div>
-                  <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>Selected Clients</h4>
+                  <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>Employers</h4>
                   {companies.map(c => (
                     <div key={c} style={{ marginBottom: 12, fontSize: 15, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{ color: 'rgba(255,255,255,0.5)' }}>→</span> {c}
@@ -416,11 +457,7 @@ const Portfolio = () => {
               <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>AI Tech Stack</h4>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {techStack.map(t => (
-                  <span key={t} style={{
-                    padding: '8px 18px', borderRadius: 999,
-                    border: '2px solid rgba(255,255,255,0.5)', fontSize: 14, fontWeight: 600,
-                    color: '#fff',
-                  }}>{t}</span>
+                  <span key={t} className="tech-pill">{t}</span>
                 ))}
               </div>
             </div>
@@ -441,7 +478,7 @@ const Portfolio = () => {
               fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
               textTransform: 'uppercase', marginTop: 24, marginBottom: 40,
             }}>
-              Selected Work
+              What I've Built
             </h2>
 
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
@@ -485,7 +522,7 @@ const Portfolio = () => {
                     </div>
                     <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>{p.title}</h3>
                     <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, marginBottom: 16 }}>{p.desc}</p>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: '#fff', cursor: 'pointer' }}>View project →</span>
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 14, fontWeight: 600, color: '#fff', cursor: 'pointer', textDecoration: 'none' }}>View project ↗</a>
                   </div>
                 </div>
               ))}
@@ -514,10 +551,7 @@ const Portfolio = () => {
               {stats.map((s, i) => {
                 const { count, ref } = useCountUp(s.value, 2000);
                 return (
-                  <div key={i} ref={ref} style={{
-                    background: '#fff', borderRadius: 20, padding: '28px 24px',
-                    color: '#000',
-                  }}>
+                  <div key={i} ref={ref} className="stat-card">
                     <div style={{ fontSize: 48, fontWeight: 700, lineHeight: 1, marginBottom: 12, color: '#007AFF' }}>
                       {s.prefix || ''}{count}{s.suffix}
                     </div>
@@ -578,15 +612,16 @@ const Portfolio = () => {
 
             {/* Education + Cert row */}
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 40 }}>
-              <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 20, padding: 24 }}>
+              <div className="credential-card">
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FFFF00', marginBottom: 12 }}>Education</div>
                 <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>University of Illinois at Urbana-Champaign</h4>
-                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Bachelor's Degree, 2008-2012. Major: Recreation, Sport & Tourism. Minor: Communication.</p>
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Bachelor's Degree, 2008-2012. Major: Recreation, Sport & Tourism (Sport Management). Minor: Communication.</p>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.15)', borderRadius: 20, padding: 24 }}>
+              <div className="credential-card">
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FFFF00', marginBottom: 12 }}>Certification</div>
                 <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>MindStudio Level 3 AI Agent Developer</h4>
-                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Highest level of certification for AI agent architecture and deployment.</p>
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', marginBottom: 8 }}>Highest level of certification for AI agent architecture and deployment.</p>
+                <a href="https://www.virtualbadge.io/certificate-validator?credential=40f1426b-e1a1-405d-96bd-03ebae42a977" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, fontWeight: 600, color: '#FFFF00', textDecoration: 'none' }}>Verify Credential ↗</a>
               </div>
             </div>
           </div>
@@ -671,9 +706,9 @@ const Portfolio = () => {
               Whether you're exploring AI in talent acquisition, looking for a builder, or just want to trade ideas — I'm always up for a conversation.
             </p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <a href="mailto:michael@example.com" className="brutalist-btn brutalist-btn-dark">✉ Email</a>
-              <a href="#" className="brutalist-btn brutalist-btn-light">💼 LinkedIn</a>
-              <a href="#" className="brutalist-btn brutalist-btn-light">🐙 GitHub</a>
+              <a href="mailto:hartman1133@gmail.com" className="brutalist-btn brutalist-btn-dark">✉ Email</a>
+              <a href="https://www.linkedin.com/in/mike-hartman-13614224" target="_blank" rel="noopener noreferrer" className="brutalist-btn brutalist-btn-light">💼 LinkedIn</a>
+              <a href="https://github.com/mhartman-11" target="_blank" rel="noopener noreferrer" className="brutalist-btn brutalist-btn-light">🐙 GitHub</a>
             </div>
           </div>
         </section>
