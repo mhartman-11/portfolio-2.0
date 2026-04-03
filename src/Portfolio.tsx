@@ -42,7 +42,7 @@ const SECTIONS = [
   { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
   { id: 'work', label: "What I've Built", num: '03', color: '#000000' },
   { id: 'impact', label: 'By the Numbers', num: '04', color: '#007AFF' },
-  { id: 'career', label: 'Careers', num: '05', color: '#FF0050' },
+  { id: 'career', label: 'Careers', num: '05', color: '#C4163A' },
   { id: 'agents', label: 'Agents', num: '06', color: '#00C853' },
   { id: 'contact', label: 'Contact', num: '07', color: '#FFFF00' },
 ];
@@ -171,7 +171,7 @@ const Portfolio = () => {
         @media (max-width: 768px) {
           .sidebar-nav { display: none !important; }
           .mobile-nav { display: flex !important; }
-          .snap-container { margin-left: 0 !important; }
+          .snap-container { margin-left: 0 !important; scroll-snap-type: none !important; }
           .snap-section { padding: 32px 20px 80px !important; }
           .grid-2col { grid-template-columns: 1fr !important; }
           .grid-3col { grid-template-columns: 1fr 1fr !important; }
@@ -311,6 +311,7 @@ const Portfolio = () => {
               style={{
                 display: 'flex', flexDirection: 'column',
                 justifyContent: 'space-between',
+                textAlign: 'left',
                 width: '100%',
                 flex: isActive ? 1.3 : 1,
                 minHeight: 0,
@@ -371,7 +372,7 @@ const Portfolio = () => {
             </h1>
             <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 32, flexWrap: 'wrap', gap: 24 }}>
               <div>
-                <p style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 500, color: '#000', maxWidth: 500, lineHeight: 1.5 }}>
+                <p style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontWeight: 500, color: '#000', lineHeight: 1.5, whiteSpace: 'nowrap' }}>
                   Senior Manager, TA & AI Enablement at Kellanova.
                 </p>
                 <p style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 500, color: '#000', maxWidth: 500, lineHeight: 1.5, marginTop: 16 }}>
@@ -544,7 +545,7 @@ const Portfolio = () => {
               fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
               textTransform: 'uppercase', marginTop: 24, marginBottom: 40,
             }}>
-              The Numbers
+              By the Numbers
             </h2>
 
             <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -569,7 +570,7 @@ const Portfolio = () => {
           className="snap-section"
           ref={el => { sectionRefs.current['career'] = el; }}
           style={{
-            background: '#FF0050', color: '#fff', padding: '60px 60px',
+            background: '#C4163A', color: '#fff', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
           }}
