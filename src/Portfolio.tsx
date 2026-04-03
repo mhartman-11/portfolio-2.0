@@ -42,7 +42,7 @@ const SECTIONS = [
   { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
   { id: 'work', label: "What I've Built", num: '03', color: '#000000' },
   { id: 'impact', label: 'By the Numbers', num: '04', color: '#007AFF' },
-  { id: 'career', label: 'Careers', num: '05', color: '#C4163A' },
+  { id: 'career', label: 'Career', num: '05', color: '#C4163A' },
   { id: 'agents', label: 'Agents', num: '06', color: '#00C853' },
   { id: 'contact', label: 'Contact', num: '07', color: '#FFFF00' },
 ];
