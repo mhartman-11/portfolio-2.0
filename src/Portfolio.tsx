@@ -76,11 +76,15 @@ const competencies = [
 const techStack = ['Canva', 'ChatGPT', 'Claude', 'Copilot', 'Gamma', 'Gemini', 'LinkedIn Talent Insights', 'MindStudio', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron'];
 
 const projects = [
-  { category: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://claude.ai/public/artifacts/bdc651fc-f368-448d-8cf5-c5ef6ee939d8' },
-  { category: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://claude.ai/public/artifacts/786c8e3a-718b-419d-8d3b-2cc7be995ef6' },
-  { category: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://claude.ai/public/artifacts/0a534c36-3f73-4e55-9a05-2ce219a46b71' },
-  { category: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events', url: 'https://claude.ai/public/artifacts/3f65ee84-9dc0-426b-8880-62f4573ebcdb' },
+  { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://claude.ai/public/artifacts/bdc651fc-f368-448d-8cf5-c5ef6ee939d8' },
+  { category: 'TA Tools', tag: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://claude.ai/public/artifacts/786c8e3a-718b-419d-8d3b-2cc7be995ef6' },
+  { category: 'TA Tools', tag: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://claude.ai/public/artifacts/0a534c36-3f73-4e55-9a05-2ce219a46b71' },
+  { category: 'TA Tools', tag: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events', url: 'https://claude.ai/public/artifacts/3f65ee84-9dc0-426b-8880-62f4573ebcdb' },
+  { category: 'AI Projects', tag: 'AI PROJECT', title: 'March Madness Pool Tracker', desc: 'Live tracker for a snake draft March Madness pool with real-time standings, rosters, and game log for NCAA tournament competition.', metric: 'Live tracker', url: 'https://march-madness-pool-liard.vercel.app/' },
+  { category: 'Consulting', tag: 'CONSULTING', title: 'Mortgage Conditions Email Generator', desc: 'Automates mortgage condition emails by parsing underwriting documents and routing action items to borrower, agent, and processor.', metric: '3-party routing', url: 'https://conditions-email-app.vercel.app' },
 ];
+
+const projectCategories = ['All', 'TA Tools', 'AI Projects', 'Consulting'];
 
 const agents = [
   { name: 'Boolean String Generator', desc: 'Advanced query builder for LinkedIn, Google, and niche platforms.', category: 'Sourcing' },
@@ -125,6 +129,7 @@ const BlockPill: React.FC<{ num: string; dark?: boolean }> = ({ num, dark }) => 
 // ---------- Main Component ----------
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
+  const [projectFilter, setProjectFilter] = useState('All');
   const [agentFilter, setAgentFilter] = useState('All');
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -153,6 +158,7 @@ const Portfolio = () => {
     sectionRefs.current[id]?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const filteredProjects = projectFilter === 'All' ? projects : projects.filter(p => p.category === projectFilter);
   const filteredAgents = agentFilter === 'All' ? agents : agents.filter(a => a.category === agentFilter);
 
   // Determine if nav label text should be dark based on section color
@@ -212,6 +218,21 @@ const Portfolio = () => {
         }
         .filter-pill:hover { background: rgba(0,0,0,0.05); }
         .filter-pill.active { background: #000; color: #fff; }
+
+        .work-filter-pill {
+          padding: 8px 20px;
+          border-radius: 999px;
+          border: 2px solid rgba(255,255,255,0.3);
+          background: transparent;
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 13px;
+          font-weight: 600;
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .work-filter-pill:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+        .work-filter-pill.active { background: #fff; color: #000; }
 
         .agent-card {
           background: #fff;
@@ -477,13 +498,26 @@ const Portfolio = () => {
             <h2 style={{
               fontSize: 'clamp(36px, 6vw, 72px)',
               fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
-              textTransform: 'uppercase', marginTop: 24, marginBottom: 40,
+              textTransform: 'uppercase', marginTop: 24, marginBottom: 20,
             }}>
               What I've Built
             </h2>
 
+            {/* Filter pills */}
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
+              {projectCategories.map(cat => (
+                <button
+                  key={cat}
+                  className={`work-filter-pill ${projectFilter === cat ? 'active' : ''}`}
+                  onClick={() => setProjectFilter(cat)}
+                >
+                  {cat === 'All' ? `All (${projects.length})` : cat}
+                </button>
+              ))}
+            </div>
+
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-              {projects.map((p, i) => (
+              {filteredProjects.map((p, i) => (
                 <div key={i} className="card-lift" style={{
                   background: '#1a1a1a', borderRadius: 24, overflow: 'hidden',
                   border: '1px solid rgba(255,255,255,0.1)',
@@ -515,7 +549,7 @@ const Portfolio = () => {
                   </div>
                   <div style={{ padding: '20px 24px 24px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                      <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FF5C00' }}>{p.category}</span>
+                      <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FF5C00' }}>{p.tag}</span>
                       <span style={{
                         fontSize: 11, padding: '3px 10px', borderRadius: 999,
                         border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.6)',
