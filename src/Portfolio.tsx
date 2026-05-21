@@ -76,16 +76,15 @@ const competencies = [
   { icon: '👥', title: 'People Leadership' },
 ];
 
-const techStack = ['Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Copilot', 'Gamma', 'Gemini', 'LinkedIn Talent Insights', 'MindStudio', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron'];
+const techStack = ['Agentic Workflows', 'API Integration', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'LinkedIn Talent Insights', 'MindStudio', 'Netlify', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron', 'Vercel'];
 
 const projects = [
-  { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://claude.ai/public/artifacts/f352991a-f0b4-41f8-b788-2a6adc5c70e0' },
+  { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/' },
   { category: 'TA Tools', tag: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://claude.ai/public/artifacts/786c8e3a-718b-419d-8d3b-2cc7be995ef6' },
   { category: 'TA Tools', tag: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://mhartman-11.github.io/ai-in-ta-digest/' },
   { category: 'TA Tools', tag: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events', url: 'https://hr-events-calendar-2026.vercel.app' },
   { category: 'TA Tools', tag: 'SOURCING TOOL', title: 'Sourcing Channel Optimizer', desc: 'Helps recruiters discover the best channels to source talent by filtering on industry, skills, and role type — no logins or fees required.', metric: 'Open access', url: 'https://sourcing-channel-optimizer.vercel.app/' },
   { category: 'AI Projects', tag: 'AI PROJECT', title: 'March Madness Pool Tracker', desc: 'Live tracker for a snake draft March Madness pool with real-time standings, rosters, and game log for NCAA tournament competition.', metric: 'Live tracker', url: 'https://march-madness-pool-liard.vercel.app/' },
-  { category: 'Consulting', tag: 'CONSULTING', title: 'Mortgage Conditions Email Generator', desc: 'Automates mortgage condition emails by parsing underwriting documents and routing action items to borrower, agent, and processor.', metric: '3-party routing', url: 'https://conditions-email-app.vercel.app' },
 ];
 
 const recognition = [
@@ -96,7 +95,7 @@ const recognition = [
   { title: 'MindStudio AI Agent Builder Bootcamp', desc: 'Selected from ~14,000 applicants (<500 accepted), 2025', org: 'MindStudio' },
 ];
 
-const projectCategories = ['All', 'TA Tools', 'AI Projects', 'Consulting'];
+const projectCategories = ['All', 'TA Tools', 'AI Projects'];
 
 const agents = [
   { name: 'Boolean String Generator', desc: 'Advanced query builder for LinkedIn, Google, and niche platforms.', category: 'Sourcing' },
@@ -725,10 +724,10 @@ const Portfolio = () => {
             </h1>
             <div className="animate-in stagger-2" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 32, flexWrap: 'wrap', gap: 24 }}>
               <div>
-                <p style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontWeight: 500, color: '#000', lineHeight: 1.5, whiteSpace: 'nowrap' }}>
+                <p style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 700, color: '#000', lineHeight: 1.3 }}>
                   Senior Manager, TA & AI Enablement at Kellanova.
                 </p>
-                <p style={{ fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 500, color: '#000', maxWidth: 500, lineHeight: 1.5, marginTop: 16 }}>
+                <p style={{ fontSize: 'clamp(14px, 1.4vw, 16px)', fontWeight: 500, color: '#000', maxWidth: 500, lineHeight: 1.5, marginTop: 12 }}>
                   Accelerating AI in Talent Acquisition.
                 </p>
                 <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.6)', marginTop: 8 }}>Greater Chicago Area</p>
@@ -847,7 +846,7 @@ const Portfolio = () => {
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 60, alignItems: 'start' }}>
               <div className="animate-in stagger-1">
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560 }}>
-                  13 years in talent acquisition, sourcing, and market intelligence — now focused on AI enablement and implementation across global TA operations. I build and deploy AI agents that make recruiters measurably more productive. I help brands articulate their talent strategy through data-driven automation and agentic AI workflows.
+                  Talent Acquisition leader at the intersection of AI and recruiting — applying AI tools and workforce intelligence to sharpen how organizations attract, evaluate, and hire talent. Building daily in Claude Code and Cowork across AI agents, automation workflows, and custom tools. 12+ years of full life-cycle TA experience, including 5+ years leading high-performing teams. Built Kellanova's talent intelligence capability from the ground up and trained global recruiting teams on practical AI use. Proven track record of leading cross-functional initiatives, influencing executive hiring strategy through data, and delivering outcomes across global organizations. Certified MindStudio AI Agent Developer.
                 </p>
               </div>
 
@@ -1512,7 +1511,7 @@ const Portfolio = () => {
               Let's Build<br />Something<br />Together
             </h2>
             <p className="animate-in stagger-1" style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(0,0,0,0.7)', marginBottom: 40, maxWidth: 500 }}>
-              Whether you're exploring AI in talent acquisition, looking for a builder, or just want to trade ideas — I'm always up for a conversation.
+              Whether you're exploring AI in talent acquisition, looking for a builder, or just want to trade ideas, I'm always up for a conversation.
             </p>
             <div className="animate-in stagger-2" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a href="mailto:hartman1133@gmail.com" className="brutalist-btn brutalist-btn-dark">Email</a>
