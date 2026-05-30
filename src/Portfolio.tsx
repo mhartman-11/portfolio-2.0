@@ -231,6 +231,8 @@ const Portfolio = () => {
           .snap-section { padding: 32px 20px 80px !important; }
           .grid-2col { grid-template-columns: 1fr !important; }
           .grid-3col { grid-template-columns: 1fr 1fr !important; }
+          .stat-grid { grid-auto-rows: 1fr !important; }
+          .stat-grid .stat-card { display: flex; flex-direction: column; }
           .career-row { grid-template-columns: 1fr !important; }
         }
 
@@ -1126,7 +1128,7 @@ const Portfolio = () => {
               Impact
             </h2>
 
-            <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <div className="grid-3col stat-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
               {stats.map((s, i) => {
                 const { count, ref } = useCountUp(s.value, 2000);
                 return (
