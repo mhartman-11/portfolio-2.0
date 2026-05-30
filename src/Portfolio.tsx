@@ -40,7 +40,7 @@ const useCountUp = (end: number, duration = 2000) => {
 const SECTIONS = [
   { id: 'hero', label: 'Welcome', num: '01', color: '#FF5C00' },
   { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
-  { id: 'work', label: "What I've Built", num: '03', color: '#000000' },
+  { id: 'work', label: "What I've Built", num: '03', color: '#0C3A34' },
   { id: 'impact', label: 'Impact', num: '04', color: '#007AFF' },
   { id: 'career', label: 'Career', num: '05', color: '#C4163A' },
   { id: 'agents', label: 'Agents', num: '06', color: '#00C853' },
@@ -890,7 +890,7 @@ const Portfolio = () => {
           className="snap-section"
           ref={el => { sectionRefs.current['work'] = el; }}
           style={{
-            background: 'linear-gradient(165deg, #0E2038 0%, #0A1729 60%, #081320 100%)', color: '#fff', padding: '60px 60px',
+            background: 'linear-gradient(165deg, #0F4A43 0%, #0B3631 60%, #07241F 100%)', color: '#fff', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
             position: 'relative', overflow: 'hidden',
