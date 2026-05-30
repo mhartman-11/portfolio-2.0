@@ -539,13 +539,13 @@ const Portfolio = () => {
         .project-card:hover::before {
           opacity: 0.3;
         }
-        .project-card-ta { background: linear-gradient(135deg, #20283A 0%, #161D2B 100%); }
+        .project-card-ta { background: linear-gradient(135deg, #16453D 0%, #0E302B 100%); }
         .project-card-ta::before { background: #FF5C00; }
         .project-card-ta .project-tag { color: #FF7A2E; }
-        .project-card-ai { background: linear-gradient(135deg, #16304F 0%, #14233A 100%); }
-        .project-card-ai::before { background: #007AFF; }
-        .project-card-ai .project-tag { color: #4DA3FF; }
-        .project-card-consulting { background: linear-gradient(135deg, #2A1822 0%, #1B141F 100%); }
+        .project-card-ai { background: linear-gradient(135deg, #134743 0%, #0D332F 100%); }
+        .project-card-ai::before { background: #2BD4C0; }
+        .project-card-ai .project-tag { color: #34E0CC; }
+        .project-card-consulting { background: linear-gradient(135deg, #1C463C 0%, #112F28 100%); }
         .project-card-consulting::before { background: #C4163A; }
         .project-card-consulting .project-tag { color: #C4163A; }
 
