@@ -79,12 +79,12 @@ const competencies = [
 const techStack = ['Agentic Workflows', 'API Integration', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'LinkedIn Talent Insights', 'MindStudio', 'Netlify', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron', 'Vercel'];
 
 const projects = [
-  { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/' },
-  { category: 'TA Tools', tag: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://recruiter-prompt-library-mh.netlify.app/' },
-  { category: 'TA Tools', tag: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://ai-in-ta-digest-mh.netlify.app/' },
-  { category: 'TA Tools', tag: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events', url: 'https://hr-ta-events-2026.vercel.app' },
-  { category: 'TA Tools', tag: 'SOURCING TOOL', title: 'Sourcing Channel Optimizer', desc: 'Helps recruiters discover the best channels to source talent by filtering on industry, skills, and role type — no logins or fees required.', metric: 'Open access', url: 'https://sourcing-channel-optimizer.vercel.app/' },
-  { category: 'AI Projects', tag: 'AI PROJECT', title: 'March Madness Pool Tracker', desc: 'Live tracker for a snake draft March Madness pool with real-time standings, rosters, and game log for NCAA tournament competition.', metric: 'Live tracker', url: 'https://march-madness-pool-liard.vercel.app/' },
+  { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/', img: `${import.meta.env.BASE_URL}screenshots/market-intel.png` },
+  { category: 'TA Tools', tag: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://recruiter-prompt-library-mh.netlify.app/', img: `${import.meta.env.BASE_URL}screenshots/recruiter-prompt.png` },
+  { category: 'TA Tools', tag: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://ai-in-ta-digest-mh.netlify.app/', img: `${import.meta.env.BASE_URL}screenshots/ai-digest.png` },
+  { category: 'TA Tools', tag: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events', url: 'https://hr-ta-events-2026.vercel.app', img: `${import.meta.env.BASE_URL}screenshots/hr-calendar.png` },
+  { category: 'TA Tools', tag: 'SOURCING TOOL', title: 'Sourcing Channel Optimizer', desc: 'Helps recruiters discover the best channels to source talent by filtering on industry, skills, and role type — no logins or fees required.', metric: 'Open access', url: 'https://sourcing-channel-optimizer.vercel.app/', img: `${import.meta.env.BASE_URL}screenshots/sourcing-optimizer.png` },
+  { category: 'AI Projects', tag: 'AI PROJECT', title: 'March Madness Pool Tracker', desc: 'Live tracker for a snake draft March Madness pool with real-time standings, rosters, and game log for NCAA tournament competition.', metric: 'Live tracker', url: 'https://march-madness-pool-liard.vercel.app/', img: `${import.meta.env.BASE_URL}screenshots/march-madness.png` },
 ];
 
 const recognition = [
@@ -998,6 +998,18 @@ const Portfolio = () => {
                     className={`project-card ${cardClass} animate-in`}
                     style={{ animationDelay: `${i * 0.08 + 0.2}s` }}
                   >
+                    <div style={{
+                      marginBottom: 20, borderRadius: 10, overflow: 'hidden',
+                      border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '16 / 10',
+                      background: 'rgba(255,255,255,0.04)',
+                    }}>
+                      <img
+                        src={p.img}
+                        alt={`${p.title} screenshot`}
+                        loading="lazy"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                      />
+                    </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
                       <span className="project-tag" style={{
                         fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase',
