@@ -519,11 +519,13 @@ const Portfolio = () => {
           text-decoration: none;
           display: block;
           color: #fff;
-          border: 2px solid rgba(255,255,255,0.1);
+          border: 2px solid rgba(255,255,255,0.14);
+          box-shadow: 0 12px 40px rgba(0,0,0,0.35);
         }
         .project-card:hover {
           transform: translateY(-4px) scale(1.01);
-          border-color: rgba(255,255,255,0.3);
+          border-color: rgba(255,255,255,0.35);
+          box-shadow: 0 18px 50px rgba(0,0,0,0.45);
         }
         .project-card::before {
           content: '';
@@ -537,13 +539,13 @@ const Portfolio = () => {
         .project-card:hover::before {
           opacity: 0.3;
         }
-        .project-card-ta { background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%); }
+        .project-card-ta { background: linear-gradient(135deg, #20283A 0%, #161D2B 100%); }
         .project-card-ta::before { background: #FF5C00; }
-        .project-card-ta .project-tag { color: #FF5C00; }
-        .project-card-ai { background: linear-gradient(135deg, #0a1628 0%, #0d0d0d 100%); }
+        .project-card-ta .project-tag { color: #FF7A2E; }
+        .project-card-ai { background: linear-gradient(135deg, #16304F 0%, #14233A 100%); }
         .project-card-ai::before { background: #007AFF; }
-        .project-card-ai .project-tag { color: #007AFF; }
-        .project-card-consulting { background: linear-gradient(135deg, #1a0f0f 0%, #0d0d0d 100%); }
+        .project-card-ai .project-tag { color: #4DA3FF; }
+        .project-card-consulting { background: linear-gradient(135deg, #2A1822 0%, #1B141F 100%); }
         .project-card-consulting::before { background: #C4163A; }
         .project-card-consulting .project-tag { color: #C4163A; }
 
@@ -882,13 +884,13 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* ===== BLOCK 03: WORK (Black) ===== */}
+        {/* ===== BLOCK 03: WORK (Navy) ===== */}
         <section
           id="work"
           className="snap-section"
           ref={el => { sectionRefs.current['work'] = el; }}
           style={{
-            background: '#000', color: '#fff', padding: '60px 60px',
+            background: 'linear-gradient(165deg, #0E2038 0%, #0A1729 60%, #081320 100%)', color: '#fff', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
             position: 'relative', overflow: 'hidden',
