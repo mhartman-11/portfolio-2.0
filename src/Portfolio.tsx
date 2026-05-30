@@ -518,13 +518,13 @@ const Portfolio = () => {
           cursor: pointer;
           text-decoration: none;
           display: block;
-          color: #fff;
-          border: 2px solid rgba(255,255,255,0.14);
+          color: #1A130E;
+          border: 2px solid rgba(0,0,0,0.08);
           box-shadow: 0 12px 40px rgba(0,0,0,0.35);
         }
         .project-card:hover {
           transform: translateY(-4px) scale(1.01);
-          border-color: rgba(255,255,255,0.35);
+          border-color: rgba(0,0,0,0.22);
           box-shadow: 0 18px 50px rgba(0,0,0,0.45);
         }
         .project-card::before {
@@ -539,13 +539,13 @@ const Portfolio = () => {
         .project-card:hover::before {
           opacity: 0.3;
         }
-        .project-card-ta { background: linear-gradient(135deg, #16453D 0%, #0E302B 100%); }
+        .project-card-ta { background: linear-gradient(135deg, #FFF8F1 0%, #F6EADD 100%); }
         .project-card-ta::before { background: #FF5C00; }
-        .project-card-ta .project-tag { color: #FF7A2E; }
-        .project-card-ai { background: linear-gradient(135deg, #134743 0%, #0D332F 100%); }
-        .project-card-ai::before { background: #2BD4C0; }
-        .project-card-ai .project-tag { color: #34E0CC; }
-        .project-card-consulting { background: linear-gradient(135deg, #1C463C 0%, #112F28 100%); }
+        .project-card-ta .project-tag { color: #D94A00; }
+        .project-card-ai { background: linear-gradient(135deg, #FFF8F1 0%, #F6EADD 100%); }
+        .project-card-ai::before { background: #0E8174; }
+        .project-card-ai .project-tag { color: #0E8174; }
+        .project-card-consulting { background: linear-gradient(135deg, #FFF8F1 0%, #F6EADD 100%); }
         .project-card-consulting::before { background: #C4163A; }
         .project-card-consulting .project-tag { color: #C4163A; }
 
@@ -1002,8 +1002,8 @@ const Portfolio = () => {
                   >
                     <div style={{
                       marginBottom: 20, borderRadius: 10, overflow: 'hidden',
-                      border: '1px solid rgba(255,255,255,0.12)', aspectRatio: '16 / 10',
-                      background: 'rgba(255,255,255,0.04)',
+                      border: '1px solid rgba(0,0,0,0.10)', aspectRatio: '16 / 10',
+                      background: 'rgba(0,0,0,0.04)',
                     }}>
                       <img
                         src={p.img}
@@ -1018,7 +1018,7 @@ const Portfolio = () => {
                       }}>{p.tag}</span>
                       <span style={{
                         fontSize: 11, padding: '4px 12px', borderRadius: 999,
-                        border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.5)',
+                        border: '1px solid rgba(0,0,0,0.18)', color: 'rgba(0,0,0,0.55)',
                         fontWeight: 600,
                       }}>{p.metric}</span>
                     </div>
@@ -1027,12 +1027,12 @@ const Portfolio = () => {
                       lineHeight: 1.15, marginBottom: 12, letterSpacing: '-0.01em',
                     }}>{p.title}</h3>
                     <p style={{
-                      fontSize: 14, color: 'rgba(255,255,255,0.45)', lineHeight: 1.6,
+                      fontSize: 14, color: 'rgba(0,0,0,0.6)', lineHeight: 1.6,
                       marginBottom: 20, maxWidth: 380,
                     }}>{p.desc}</p>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>View project</span>
-                      <span className="project-arrow" style={{ fontSize: 16, color: '#fff' }}>↗</span>
+                      <span style={{ fontSize: 13, fontWeight: 600, color: 'rgba(0,0,0,0.75)' }}>View project</span>
+                      <span className="project-arrow" style={{ fontSize: 16, color: '#1A130E' }}>↗</span>
                     </div>
                   </a>
                 );
