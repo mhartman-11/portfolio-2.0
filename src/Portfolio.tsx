@@ -1228,11 +1228,6 @@ const Portfolio = () => {
             }} />
           </div>
           <div className="parallax-layer parallax-mid">
-            {/* Dominant vertical timeline line */}
-            <div className="bg-element" style={{
-              top: '5%', right: '10%', width: 2, height: '90%',
-              background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.30) 15%, rgba(255,255,255,0.30) 85%, transparent)',
-            }} />
             {/* Branch lines extending left from timeline */}
             <div className="bg-element wire-line-draw" style={{
               top: '18%', right: '10%', width: '18%', height: 1,
