@@ -677,8 +677,9 @@ const Portfolio = () => {
           .recognition-row { grid-template-columns: 1fr !important; }
         }
         @media (prefers-reduced-motion: reduce) {
-          .bg-element { animation: none !important; }
-          .parallax-layer { transform: none !important; animation: none !important; }
+          /* Keep ambient wireframe motion so the background still feels alive;
+             only suppress the scroll-driven parallax jump. */
+          .parallax-layer { transform: none !important; }
         }
       `}</style>
 
