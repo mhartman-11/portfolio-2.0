@@ -282,8 +282,9 @@ const Portfolio = () => {
           .snap-section { padding: 32px 20px 80px !important; }
           .grid-2col { grid-template-columns: 1fr !important; }
           .grid-3col { grid-template-columns: 1fr 1fr !important; }
-          .stat-grid { grid-auto-rows: 1fr !important; }
-          .stat-grid .stat-card { display: flex; flex-direction: column; }
+          .stat-grid { grid-auto-rows: 1fr !important; gap: 12px !important; }
+          .stat-grid .stat-card { display: flex; flex-direction: column; padding: 18px 14px !important; }
+          .stat-grid .stat-card p { font-size: 12.5px !important; }
           .career-row { grid-template-columns: 1fr !important; }
         }
 
@@ -674,8 +675,6 @@ const Portfolio = () => {
           .animate-in { opacity: 1 !important; animation: none !important; }
           .tech-pill-float { animation: none !important; }
           .recognition-row { grid-template-columns: 1fr !important; }
-          .bg-element { display: none !important; }
-          .parallax-layer { display: none !important; }
         }
         @media (prefers-reduced-motion: reduce) {
           .bg-element { animation: none !important; }
@@ -1590,7 +1589,7 @@ const Portfolio = () => {
                 const { count, ref } = useCountUp(s.value, 2000);
                 return (
                   <div key={i} ref={ref} className="stat-card animate-in" style={{ animationDelay: `${i * 0.08}s` }}>
-                    <div style={{ fontSize: 48, fontWeight: 700, lineHeight: 1, marginBottom: 12, color: '#007AFF' }}>
+                    <div style={{ fontSize: 'clamp(30px, 7vw, 48px)', fontWeight: 700, lineHeight: 1, marginBottom: 12, color: '#007AFF', whiteSpace: 'nowrap' }}>
                       {s.prefix || ''}{count}{s.suffix}
                     </div>
                     <p style={{ fontSize: 14, lineHeight: 1.5, color: 'rgba(0,0,0,0.6)' }}>{s.label}</p>
