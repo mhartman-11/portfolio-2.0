@@ -41,8 +41,8 @@ const SECTIONS = [
   { id: 'hero', label: 'Welcome', num: '01', color: '#FF5C00' },
   { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
   { id: 'work', label: "What I've Built", num: '03', color: '#0C3A34' },
-  { id: 'career', label: 'Career', num: '04', color: '#C4163A' },
-  { id: 'consulting', label: 'Consulting', num: '05', color: '#00C853' },
+  { id: 'career', label: 'Career', num: '04', color: '#17171C' },
+  { id: 'consulting', label: 'AI Consulting Case Studies', num: '05', color: '#00C853' },
   { id: 'impact', label: 'Impact', num: '06', color: '#007AFF' },
   { id: 'contact', label: 'Contact', num: '07', color: '#FFFF00' },
 ];
@@ -55,16 +55,17 @@ const stats = [
   { value: 850, suffix: 'K', prefix: '$', label: 'In cost savings generated through sourced hires at BCG' },
   { value: 30, suffix: '%', label: 'Recruiter productivity lift after AI agent deployment' },
   { value: 50, suffix: '%', label: 'Increase in TA team engagement with AI enablement programs' },
+  { value: 100, prefix: '~$', suffix: 'K', label: 'In cost avoidance from enterprise-wide interview evaluation frameworks' },
   { value: 93, suffix: '%', label: 'Mansfield D&I attainment rate across verticals at Uber' },
 ];
 
 const career = [
-  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', company: "Kellanova (previously Kellogg's)", desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%. Oversee hiring for 11 Corporate Functions, managing top performing team in North America. 91% offer accept rate across ~300 hires in 2024.' },
-  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', company: 'Uber', desc: 'Promoted within six months, the only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
-  { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders. Only team member out of 45 promoted in 2020. Sourcing across NAMR, EMEA, and APAC.' },
-  { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units. Managed $60K conference budget.' },
-  { period: 'Aug 2014 – Sep 2015', current: false, title: 'Affiliate Account Manager', company: 'Cars.com', desc: 'Account management bridging sales and customer success in automotive digital marketplace.' },
-  { period: 'Aug 2012 – Aug 2014', current: false, title: 'Technical Recruiter', company: 'Brooksource', desc: 'Foundation in high-volume technical recruiting and client relationship management.' },
+  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', logo: 'kellanova.com', company: "Kellanova (previously Kellogg's)", desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%. Oversee hiring for 11 Corporate Functions, managing top performing team in North America. 91% offer accept rate across ~300 hires in 2024 and 2025. Owned the end-to-end product lifecycle for enterprise-wide interview evaluation frameworks, driving global adoption and $50K–$100K in cost avoidance.' },
+  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', logo: 'uber.com', company: 'Uber', desc: 'Promoted within six months, the only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
+  { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', logo: 'bcg.com', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders. Only team member out of 45 promoted in 2020. Sourcing across NAMR, EMEA, and APAC.' },
+  { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', logo: 'accenture.com', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units. Managed $60K conference budget.' },
+  { period: 'Aug 2014 – Sep 2015', current: false, title: 'Affiliate Account Manager', logo: 'cars.com', company: 'Cars.com', desc: 'Account management bridging sales and customer success in automotive digital marketplace.' },
+  { period: 'Aug 2012 – Aug 2014', current: false, title: 'Technical Recruiter', logo: 'brooksource.com', company: 'Brooksource', desc: 'Foundation in high-volume technical recruiting and client relationship management.' },
 ];
 
 const competencies = [
@@ -77,7 +78,7 @@ const competencies = [
   { icon: '👥', title: 'People Leadership' },
 ];
 
-const techStack = ['Agentic Workflows', 'API Integration', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'LinkedIn Talent Insights', 'MindStudio', 'Netlify', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron', 'Vercel'];
+const techStack = ['Buffer', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Claude Design', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'LinkedIn Talent Insights', 'MindStudio', 'Nano Banana', 'Netlify', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron', 'Vercel'];
 
 const projects = [
   { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/', img: `${import.meta.env.BASE_URL}screenshots/market-intel.png` },
@@ -101,10 +102,10 @@ const caseStudies = [
     sector: 'Mortgage Lending',
     title: 'Automated Content Engine',
     problem: 'A mortgage VP was producing LinkedIn and Facebook content by hand. Inconsistent cadence, no system, and a real time drain on a revenue-generating executive.',
-    approach: 'Built a bi-weekly content engine on the Claude API with a structured intake workflow, voice-matched post generation, and Buffer integration for scheduling. Designed post formats tailored to a residential home buyer audience. The executive submits a brief; the engine handles the rest.',
-    outcome: 'Reduced content production time by an estimated 70%. The client went from sporadic posting to a steady, on-brand cadence, which has generated new inbound business and made them a known voice in residential mortgage.',
+    approach: 'Built a bi-weekly content engine on the Claude API with a structured intake workflow, Perplexity-powered market research, voice-matched post generation, AI-generated image or video for each post, and Buffer integration for scheduling. Designed post formats tailored to a residential home buyer audience. The executive submits a brief; the engine handles the rest.',
+    outcome: 'Reduced content production time by an estimated 70%. The client went from sporadic posting to a steady, on-brand cadence, which has helped generate leads and made them a known voice in residential mortgage.',
     metric: '~70% time saved',
-    stack: ['Claude API', 'Notion', 'Buffer', 'Vercel'],
+    stack: ['Claude API', 'Perplexity', 'Image/Video Gen', 'Notion', 'Buffer', 'Vercel'],
   },
   {
     sector: 'Mortgage Lending',
@@ -388,6 +389,30 @@ const Portfolio = () => {
           background: rgba(255,255,255,0.15);
           border-color: #fff;
           transform: translateY(-2px);
+        }
+
+        .spec-chip {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 11px 14px;
+          margin-bottom: 10px;
+          background: rgba(255,255,255,0.08);
+          border: 1.5px solid rgba(255,255,255,0.18);
+          border-radius: 12px;
+          font-size: 15px;
+          font-weight: 600;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .spec-chip:hover {
+          background: rgba(255,255,255,0.16);
+          border-color: rgba(255,255,255,0.45);
+          transform: translateX(4px);
+        }
+        .spec-chip .spec-icon { font-size: 18px; line-height: 1; }
+        .spec-chip .spec-dot {
+          width: 7px; height: 7px; border-radius: 50%;
+          background: #FFFF00; flex-shrink: 0;
         }
 
         .stat-card {
@@ -723,7 +748,7 @@ const Portfolio = () => {
           id="hero"
           className="snap-section"
           ref={el => { sectionRefs.current['hero'] = el; }}
-          style={{ background: '#FF5C00', flexDirection: 'column', justifyContent: 'center', padding: '60px 60px', position: 'relative', overflow: 'hidden' }}
+          style={{ background: '#FF5C00', flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch', padding: '60px 60px', position: 'relative', overflow: 'hidden' }}
         >
           {/* Geometric wireframe: Blueprint Origin */}
           <div className="parallax-layer parallax-back">
@@ -932,29 +957,38 @@ const Portfolio = () => {
             </h2>
 
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 60, alignItems: 'start' }}>
-              <div className="animate-in stagger-1">
-                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560 }}>
-                  Talent Acquisition leader at the intersection of AI and recruiting. I apply AI tools and workforce intelligence to sharpen how organizations attract, evaluate, and hire talent. Building daily in Claude Code and Cowork across AI agents, automation workflows, and custom tools. 12+ years of full life-cycle TA experience, including 5+ years leading high-performing teams. Built Kellanova's talent intelligence capability from the ground up and trained global recruiting teams on practical AI use. Track record of leading cross-functional initiatives, influencing executive hiring strategy through data, and delivering outcomes across global organizations. Certified MindStudio AI Agent Developer.
+              <div className="animate-in stagger-1" style={{ borderLeft: '3px solid rgba(255,255,255,0.45)', paddingLeft: 24 }}>
+                <p style={{ fontSize: 'clamp(18px, 2vw, 22px)', lineHeight: 1.55, fontWeight: 600, color: '#fff', maxWidth: 560 }}>
+                  Talent Acquisition leader at the intersection of AI and recruiting. I apply AI tools and workforce intelligence to sharpen how organizations attract, evaluate, and hire talent.
+                </p>
+                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 18 }}>
+                  Building daily in Claude Code and Cowork across AI agents, automation workflows, and custom tools. I built Kellanova's talent intelligence capability from the ground up and trained global recruiting teams on practical AI use.
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
-                  I also founded Hartman AI LLC, an AI consulting practice where I build custom agents and automation tools for small businesses.
+                  12+ years of full life-cycle TA experience, including 5+ years leading high-performing teams, with a track record of leading cross-functional initiatives and influencing executive hiring strategy through data.
+                </p>
+                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
+                  Certified MindStudio AI Agent Developer.
+                </p>
+                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
+                  Founder of <strong style={{ fontWeight: 700, color: '#fff' }}>Hartman AI LLC</strong>, an AI consulting practice where I build custom agents and automation tools for small businesses.
                 </p>
               </div>
 
-              <div className="animate-in stagger-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40 }}>
+              <div className="animate-in stagger-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
                 <div>
                   <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>Specializations</h4>
                   {competencies.map(c => (
-                    <div key={c.title} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12, fontSize: 15, fontWeight: 500 }}>
-                      <span>{c.icon}</span> {c.title}
+                    <div key={c.title} className="spec-chip">
+                      <span className="spec-icon">{c.icon}</span> {c.title}
                     </div>
                   ))}
                 </div>
                 <div>
                   <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>Employers</h4>
                   {companies.map(c => (
-                    <div key={c} style={{ marginBottom: 12, fontSize: 15, fontWeight: 500, display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <span style={{ color: 'rgba(255,255,255,0.5)' }}>→</span> {c}
+                    <div key={c} className="spec-chip">
+                      <span className="spec-dot" /> {c}
                     </div>
                   ))}
                 </div>
@@ -1179,7 +1213,7 @@ const Portfolio = () => {
           className="snap-section"
           ref={el => { sectionRefs.current['career'] = el; }}
           style={{
-            background: '#C4163A', color: '#fff', padding: '60px 60px',
+            background: '#17171C', color: '#fff', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
             position: 'relative', overflow: 'hidden',
@@ -1277,6 +1311,21 @@ const Portfolio = () => {
                         fontSize: 11, fontWeight: 700, letterSpacing: 1,
                         color: '#FFFF00', textTransform: 'uppercase',
                       }}>● Current</span>
+                    )}
+                    {role.logo && (
+                      <div style={{
+                        marginTop: 12, width: 60, height: 60,
+                        background: '#fff', borderRadius: 12,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      }}>
+                        <img
+                          src={`https://www.google.com/s2/favicons?domain=${role.logo}&sz=256`}
+                          alt={`${role.company} logo`}
+                          width={40} height={40}
+                          loading="lazy"
+                          style={{ display: 'block' }}
+                        />
+                      </div>
                     )}
                   </div>
                   <div>
