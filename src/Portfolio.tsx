@@ -41,16 +41,16 @@ const SECTIONS = [
   { id: 'hero', label: 'Welcome', num: '01', color: '#FF5C00' },
   { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
   { id: 'work', label: "What I've Built", num: '03', color: '#0C3A34' },
-  { id: 'impact', label: 'Impact', num: '04', color: '#007AFF' },
-  { id: 'career', label: 'Career', num: '05', color: '#C4163A' },
-  { id: 'agents', label: 'Agents', num: '06', color: '#00C853' },
+  { id: 'career', label: 'Career', num: '04', color: '#C4163A' },
+  { id: 'consulting', label: 'Consulting', num: '05', color: '#00C853' },
+  { id: 'impact', label: 'Impact', num: '06', color: '#007AFF' },
   { id: 'contact', label: 'Contact', num: '07', color: '#FFFF00' },
 ];
 
 const companies = ['Kellanova', 'Uber', 'BCG', 'Accenture', 'Cars.com', 'Brooksource'];
 
 const stats = [
-  { value: 91, suffix: '%', label: 'Offer accept rate across ~300 hires at Kellanova in 2024' },
+  { value: 91, suffix: '%', label: 'Offer accept rate in 2024 and 2025' },
   { value: 10, suffix: '+', label: 'Custom AI agents built and deployed across Global TA operations' },
   { value: 850, suffix: 'K', prefix: '$', label: 'In cost savings generated through sourced hires at BCG' },
   { value: 30, suffix: '%', label: 'Recruiter productivity lift after AI agent deployment' },
@@ -60,7 +60,7 @@ const stats = [
 
 const career = [
   { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', company: "Kellanova (previously Kellogg's)", desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%. Oversee hiring for 11 Corporate Functions, managing top performing team in North America. 91% offer accept rate across ~300 hires in 2024.' },
-  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', company: 'Uber', desc: 'Promoted within six months — only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
+  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', company: 'Uber', desc: 'Promoted within six months, the only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
   { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders. Only team member out of 45 promoted in 2020. Sourcing across NAMR, EMEA, and APAC.' },
   { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units. Managed $60K conference budget.' },
   { period: 'Aug 2014 – Sep 2015', current: false, title: 'Affiliate Account Manager', company: 'Cars.com', desc: 'Account management bridging sales and customer success in automotive digital marketplace.' },
@@ -70,6 +70,7 @@ const career = [
 const competencies = [
   { icon: '⚡', title: 'Agentic AI Workflows' },
   { icon: '🧠', title: 'AI Enablement' },
+  { icon: '💼', title: 'AI Consulting' },
   { icon: '📊', title: 'Market Intelligence' },
   { icon: '🔍', title: 'Talent Sourcing' },
   { icon: '⚙️', title: 'TA Operations' },
@@ -83,7 +84,7 @@ const projects = [
   { category: 'TA Tools', tag: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://recruiter-prompt-library-mh.netlify.app/', img: `${import.meta.env.BASE_URL}screenshots/recruiter-prompt.png` },
   { category: 'TA Tools', tag: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://ai-in-ta-digest-mh.netlify.app/', img: `${import.meta.env.BASE_URL}screenshots/ai-digest.png` },
   { category: 'TA Tools', tag: 'INDUSTRY RESOURCES', title: '2026 HR/TA Global Calendar', desc: 'Centralized hub for HR and TA events worldwide with advanced filtering and registration access.', metric: 'Global events', url: 'https://hr-ta-events-2026.vercel.app', img: `${import.meta.env.BASE_URL}screenshots/hr-calendar.png` },
-  { category: 'TA Tools', tag: 'SOURCING TOOL', title: 'Sourcing Channel Optimizer', desc: 'Helps recruiters discover the best channels to source talent by filtering on industry, skills, and role type — no logins or fees required.', metric: 'Open access', url: 'https://sourcing-channel-optimizer.vercel.app/', img: `${import.meta.env.BASE_URL}screenshots/sourcing-optimizer.png` },
+  { category: 'TA Tools', tag: 'SOURCING TOOL', title: 'Sourcing Channel Optimizer', desc: 'Helps recruiters discover the best channels to source talent by filtering on industry, skills, and role type, no logins or fees required.', metric: 'Open access', url: 'https://sourcing-channel-optimizer.vercel.app/', img: `${import.meta.env.BASE_URL}screenshots/sourcing-optimizer.png` },
   { category: 'AI Projects', tag: 'AI PROJECT', title: 'March Madness Pool Tracker', desc: 'Live tracker for a snake draft March Madness pool with real-time standings, rosters, and game log for NCAA tournament competition.', metric: 'Live tracker', url: 'https://march-madness-pool-liard.vercel.app/', img: `${import.meta.env.BASE_URL}screenshots/march-madness.png` },
 ];
 
@@ -93,6 +94,55 @@ const recognition = [
   { title: 'Strategy Spark Award', desc: 'Recognized for sharp, high-impact thinking; only TA recipient', org: 'Kellanova' },
   { title: 'BCG Global Recognition Award', desc: 'Multiple global awards, including largest-ever cost savings on a sourced hire', org: 'BCG' },
   { title: 'MindStudio AI Agent Builder Bootcamp', desc: 'Selected from ~14,000 applicants (<500 accepted), 2025', org: 'MindStudio' },
+];
+
+const caseStudies = [
+  {
+    sector: 'Mortgage Lending',
+    title: 'Automated Content Engine',
+    problem: 'A mortgage VP was producing LinkedIn and Facebook content by hand. Inconsistent cadence, no system, and a real time drain on a revenue-generating executive.',
+    approach: 'Built a bi-weekly content engine on the Claude API with a structured intake workflow, voice-matched post generation, and Buffer integration for scheduling. Designed post formats tailored to a residential home buyer audience. The executive submits a brief; the engine handles the rest.',
+    outcome: 'Reduced content production time by an estimated 70%. The client went from sporadic posting to a steady, on-brand cadence, which has generated new inbound business and made them a known voice in residential mortgage.',
+    metric: '~70% time saved',
+    stack: ['Claude API', 'Notion', 'Buffer', 'Vercel'],
+  },
+  {
+    sector: 'Mortgage Lending',
+    title: 'Conditions Email Generator',
+    problem: 'Loan officers were manually parsing conditions notices to figure out which party owed action (buyer, agent, or bank), then drafting individual emails to each. High volume, high error risk, and a real time drain.',
+    approach: 'Built a document parsing and email generation tool that ingests a conditions notice, identifies the responsible party per condition, renders the document, and drafts custom emails to the right recipients. Designed for non-technical users.',
+    outcome: 'Saves 5–7 hours per week in manual review and drafting time per loan officer.',
+    metric: '5–7 hrs/wk saved',
+    stack: ['Claude', 'Vercel'],
+  },
+  {
+    sector: 'Plastics Manufacturing',
+    title: 'Die Design Automation Tool',
+    problem: 'The engineering team was manually translating PDF die specs into CAD-ready inputs, a slow and error-prone process that bottlenecked production.',
+    approach: 'Built a PDF-to-CAD macro tool that parses incoming die spec documents, extracts structured design parameters, and prepares them for downstream engineering use. Scoped through a structured discovery process with defined input and output requirements.',
+    outcome: 'Projected to eliminate 4–6 hours of manual engineering work per week.',
+    metric: '4–6 hrs/wk saved',
+    stack: ['Claude API'],
+  },
+  {
+    sector: 'Global Logistics',
+    title: 'Social Content System',
+    problem: 'A global logistics company needed consistent branded social content across LinkedIn but lacked the internal capacity to produce it at scale.',
+    approach: 'Designed and deployed an AI-powered content generation workflow tailored to the company’s brand voice and audience. Built repeatable post formats across content categories, enabling high-volume output without proportional time investment.',
+    outcome: 'Scaled branded content output across channels with a consistent publishing cadence.',
+    metric: 'Scaled output',
+    stack: ['Claude'],
+  },
+  {
+    sector: 'Personal Project',
+    title: 'March Madness Player Pool Tracker',
+    problem: 'An 11-person friend group was spending hours each night updating spreadsheets by hand to track individual player scoring across tournament games. It was error-prone, slow, and it killed the fun of following along in real time.',
+    approach: 'Built a fully interactive web app with live scoring updates, a 222-player pool dashboard, projected points, and filters by seed, region, and health status. Replaced the nightly spreadsheet grind with a real-time experience the whole group could follow together.',
+    outcome: 'Eliminated hours of nightly manual work and turned a chore into something the whole group looked forward to. The build proved production-grade, user-facing tools are achievable outside a formal engineering team, and it has since sparked inbound interest from businesses wanting similar builds.',
+    metric: 'Shipped fast',
+    stack: ['React', 'Next.js', 'Claude API'],
+    personal: true,
+  },
 ];
 
 const projectCategories = ['All', 'TA Tools', 'AI Projects'];
@@ -561,6 +611,40 @@ const Portfolio = () => {
           transform: translate(0, 0);
         }
 
+        /* Case study card styles */
+        .case-card {
+          display: flex;
+          flex-direction: column;
+          background: linear-gradient(135deg, #FFF8F1 0%, #F6EADD 100%);
+          border: 2px solid rgba(0,0,0,0.08);
+          border-radius: 20px;
+          padding: 28px 26px;
+          color: #1A130E;
+          box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .case-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(0,0,0,0.22);
+          box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+        }
+        .case-section-label {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: rgba(0,0,0,0.4);
+          margin-bottom: 4px;
+        }
+        .case-stack-pill {
+          font-size: 11px;
+          font-weight: 600;
+          padding: 4px 12px;
+          border-radius: 999px;
+          border: 1.5px solid rgba(0,0,0,0.18);
+          color: rgba(0,0,0,0.6);
+        }
+
         @media (max-width: 768px) {
           .animate-in { opacity: 1 !important; animation: none !important; }
           .tech-pill-float { animation: none !important; }
@@ -731,10 +815,10 @@ const Portfolio = () => {
                 <p style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 700, color: '#000', lineHeight: 1.3 }}>
                   Senior Manager, TA & AI Enablement at Kellanova.
                 </p>
-                <p style={{ fontSize: 'clamp(14px, 1.4vw, 16px)', fontWeight: 500, color: '#000', maxWidth: 500, lineHeight: 1.5, marginTop: 12 }}>
-                  Accelerating AI in Talent Acquisition.
+                <p style={{ fontSize: 'clamp(16px, 1.8vw, 20px)', fontWeight: 700, color: '#000', lineHeight: 1.3, marginTop: 6 }}>
+                  Founder, Hartman AI LLC.
                 </p>
-                <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.6)', marginTop: 8 }}>Greater Chicago Area</p>
+                <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.6)', marginTop: 12 }}>Greater Chicago Area</p>
               </div>
               {/* Headshot */}
               <div style={{
@@ -850,7 +934,10 @@ const Portfolio = () => {
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 60, alignItems: 'start' }}>
               <div className="animate-in stagger-1">
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560 }}>
-                  Talent Acquisition leader at the intersection of AI and recruiting — applying AI tools and workforce intelligence to sharpen how organizations attract, evaluate, and hire talent. Building daily in Claude Code and Cowork across AI agents, automation workflows, and custom tools. 12+ years of full life-cycle TA experience, including 5+ years leading high-performing teams. Built Kellanova's talent intelligence capability from the ground up and trained global recruiting teams on practical AI use. Proven track record of leading cross-functional initiatives, influencing executive hiring strategy through data, and delivering outcomes across global organizations. Certified MindStudio AI Agent Developer.
+                  Talent Acquisition leader at the intersection of AI and recruiting. I apply AI tools and workforce intelligence to sharpen how organizations attract, evaluate, and hire talent. Building daily in Claude Code and Cowork across AI agents, automation workflows, and custom tools. 12+ years of full life-cycle TA experience, including 5+ years leading high-performing teams. Built Kellanova's talent intelligence capability from the ground up and trained global recruiting teams on practical AI use. Track record of leading cross-functional initiatives, influencing executive hiring strategy through data, and delivering outcomes across global organizations. Certified MindStudio AI Agent Developer.
+                </p>
+                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
+                  I also founded Hartman AI LLC, an AI consulting practice where I build custom agents and automation tools for small businesses.
                 </p>
               </div>
 
@@ -1040,140 +1127,45 @@ const Portfolio = () => {
                 );
               })}
             </div>
-          </div>
-        </section>
 
-        {/* ===== BLOCK 04: IMPACT (Blue) ===== */}
-        <section
-          id="impact"
-          className="snap-section"
-          ref={el => { sectionRefs.current['impact'] = el; }}
-          style={{
-            background: '#007AFF', color: '#fff', padding: '60px 60px',
-            flexDirection: 'column', alignItems: 'stretch',
-            minHeight: '100vh', height: 'auto',
-            position: 'relative', overflow: 'hidden',
-          }}
-        >
-          {/* Geometric wireframe: Data Visualization Grid */}
-          <div className="parallax-layer parallax-back">
-            <div className="bg-element wire-grid-drift" style={{
-              top: 0, left: 0, right: 0, bottom: 0,
-              backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)',
-              backgroundSize: '60px 60px',
-            }} />
-          </div>
-          <div className="parallax-layer parallax-mid">
-            {/* Vertical axis line full height right side */}
-            <div className="bg-element" style={{
-              top: 0, right: '15%', width: 1, height: '100%',
-              background: 'rgba(255,255,255,0.18)',
-            }} />
-            {/* Horizontal measurement lines with different lengths = chart bars */}
-            <div className="bg-element wire-line-draw" style={{
-              top: '22%', left: '5%', width: '58%', height: 2,
-              background: 'rgba(255,255,255,0.32)',
-            }} />
-            <div className="bg-element wire-line-draw-2" style={{
-              top: '38%', left: '5%', width: '42%', height: 2,
-              background: 'rgba(255,255,255,0.26)',
-            }} />
-            <div className="bg-element wire-line-draw-3" style={{
-              top: '54%', left: '5%', width: '72%', height: 2,
-              background: 'rgba(255,255,255,0.30)',
-            }} />
-            <div className="bg-element wire-line-draw" style={{
-              top: '70%', left: '5%', width: '35%', height: 2,
-              background: 'rgba(255,255,255,0.22)',
-              animationDelay: '3s',
-            }} />
-            {/* Large background circle top-right decorative */}
-            <div className="bg-element wire-breathe" style={{
-              top: '-10%', right: '-8%', width: 320, height: 320,
-              border: '2px solid rgba(255,255,255,0.14)',
-              borderRadius: '50%',
-            }} />
-          </div>
-          <div className="parallax-layer parallax-front">
-            {/* Data point nodes at end of each bar */}
-            <div className="bg-element wire-node" style={{
-              top: '21%', left: '63%', width: 12, height: 12,
-              borderRadius: '50%', background: 'rgba(255,255,255,0.45)',
-            }} />
-            <div className="bg-element wire-ring" style={{
-              top: '20%', left: '62%', width: 14, height: 14,
-              borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.30)',
-            }} />
-            <div className="bg-element wire-node-2" style={{
-              top: '37%', left: '47%', width: 10, height: 10,
-              borderRadius: '50%', background: 'rgba(255,255,255,0.38)',
-            }} />
-            <div className="bg-element wire-node-3" style={{
-              top: '53%', left: '77%', width: 12, height: 12,
-              borderRadius: '50%', background: 'rgba(255,255,255,0.42)',
-            }} />
-            <div className="bg-element wire-ring-2" style={{
-              top: '52%', left: '76%', width: 14, height: 14,
-              borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.28)',
-            }} />
-          </div>
+            {/* MindStudio AI Agents (merged from former standalone block) */}
+            <div style={{ marginTop: 56 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <h3 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
+                  MindStudio AI Agents
+                </h3>
+                <span style={{ fontSize: 13, fontWeight: 700, padding: '6px 16px', borderRadius: 999, background: '#fff', color: '#0B3631' }}>15 deployed</span>
+              </div>
+              <p style={{ fontSize: 'clamp(14px, 1.4vw, 16px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.7)', maxWidth: 620, marginTop: 16, marginBottom: 24 }}>
+                Agents I've built and deployed for both personal and professional use.
+              </p>
 
-          <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
-            <BlockPill num="04" />
-            <h2 className="animate-in" style={{
-              fontSize: 'clamp(36px, 6vw, 72px)',
-              fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
-              textTransform: 'uppercase', marginTop: 24, marginBottom: 40,
-            }}>
-              Impact
-            </h2>
+              {/* Filter pills */}
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
+                {agentCategories.map(cat => (
+                  <button
+                    key={cat}
+                    className={`work-filter-pill ${agentFilter === cat ? 'active' : ''}`}
+                    onClick={() => setAgentFilter(cat)}
+                  >
+                    {cat === 'All' ? `All (${agents.length})` : cat}
+                  </button>
+                ))}
+              </div>
 
-            <div className="grid-3col stat-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-              {stats.map((s, i) => {
-                const { count, ref } = useCountUp(s.value, 2000);
-                return (
-                  <div key={i} ref={ref} className="stat-card animate-in" style={{ animationDelay: `${i * 0.08}s` }}>
-                    <div style={{ fontSize: 48, fontWeight: 700, lineHeight: 1, marginBottom: 12, color: '#007AFF' }}>
-                      {s.prefix || ''}{count}{s.suffix}
+              {/* Agent grid */}
+              <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+                {filteredAgents.map((agent) => (
+                  <div key={agent.name} className="agent-card">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                      <span style={{
+                        width: 10, height: 10, borderRadius: '50%',
+                        background: categoryColors[agent.category] || '#000',
+                        flexShrink: 0,
+                      }} />
+                      <h4 style={{ fontSize: 14, fontWeight: 700, color: '#1A130E' }}>{agent.name}</h4>
                     </div>
-                    <p style={{ fontSize: 14, lineHeight: 1.5, color: 'rgba(0,0,0,0.6)' }}>{s.label}</p>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Recognition */}
-            <div style={{ marginTop: 48 }}>
-              <h3 className="animate-in" style={{
-                fontSize: 13, fontWeight: 700, letterSpacing: 2,
-                textTransform: 'uppercase', marginBottom: 20, opacity: 0.85,
-                animationDelay: '0.5s',
-              }}>
-                Recognition
-              </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-                {recognition.map((r, i) => (
-                  <div key={i} className="recognition-row animate-in" style={{
-                    padding: '16px 0',
-                    borderTop: '2px solid rgba(255,255,255,0.25)',
-                    display: 'grid',
-                    gridTemplateColumns: '1fr auto',
-                    gap: 16,
-                    alignItems: 'start',
-                    animationDelay: `${i * 0.06 + 0.55}s`,
-                  }}>
-                    <div>
-                      <div style={{ fontSize: 16, fontWeight: 700 }}>{r.title}</div>
-                      <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginTop: 4 }}>{r.desc}</div>
-                    </div>
-                    <span style={{
-                      fontSize: 11, fontWeight: 700, letterSpacing: 1,
-                      padding: '4px 12px', borderRadius: 999,
-                      border: '1.5px solid rgba(255,255,255,0.4)',
-                      whiteSpace: 'nowrap',
-                    }}>
-                      {r.org}
-                    </span>
+                    <p style={{ fontSize: 12, color: 'rgba(0,0,0,0.6)', lineHeight: 1.5, paddingLeft: 18 }}>{agent.desc}</p>
                   </div>
                 ))}
               </div>
@@ -1181,7 +1173,7 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* ===== BLOCK 05: CAREER (Cream) ===== */}
+        {/* ===== BLOCK 04: CAREER (Cream) ===== */}
         <section
           id="career"
           className="snap-section"
@@ -1260,7 +1252,7 @@ const Portfolio = () => {
           </div>
 
           <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
-            <BlockPill num="05" />
+            <BlockPill num="04" />
             <h2 className="animate-in" style={{
               fontSize: 'clamp(32px, 5vw, 64px)',
               fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
@@ -1313,11 +1305,11 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* ===== BLOCK 06: AGENTS (Green) ===== */}
+        {/* ===== BLOCK 05: AI CONSULTING (Green) ===== */}
         <section
-          id="agents"
+          id="consulting"
           className="snap-section"
-          ref={el => { sectionRefs.current['agents'] = el; }}
+          ref={el => { sectionRefs.current['consulting'] = el; }}
           style={{
             background: '#00C853', color: '#000', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
@@ -1367,7 +1359,7 @@ const Portfolio = () => {
             }} />
           </div>
           <div className="parallax-layer parallax-front">
-            {/* Hub nodes — larger, more visible */}
+            {/* Hub nodes */}
             <div className="bg-element wire-node" style={{
               top: '28%', left: '12%', width: 14, height: 14,
               borderRadius: '50%', background: 'rgba(0,0,0,0.30)',
@@ -1396,48 +1388,203 @@ const Portfolio = () => {
 
           <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <BlockPill num="06" dark />
+              <BlockPill num="05" dark />
               <span style={{
                 fontSize: 13, fontWeight: 700, padding: '6px 16px',
                 borderRadius: 999, background: '#000', color: '#00C853',
-              }}>15 deployed</span>
+              }}>{caseStudies.length} case studies</span>
             </div>
             <h2 className="animate-in" style={{
               fontSize: 'clamp(32px, 5vw, 64px)',
               fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
-              textTransform: 'uppercase', marginTop: 24, marginBottom: 24,
+              textTransform: 'uppercase', marginTop: 24, marginBottom: 20,
             }}>
-              MindStudio AI Agents
+              AI Consulting: Case Studies
             </h2>
+            <p className="animate-in stagger-1" style={{
+              fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7,
+              color: 'rgba(0,0,0,0.7)', maxWidth: 620, marginBottom: 36,
+            }}>
+              Independent AI builds for small businesses. I scope each one through discovery, ship it to non-technical users, and measure it in hours saved.
+            </p>
 
-            {/* Filter pills */}
-            <div className="animate-in stagger-1" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
-              {agentCategories.map(cat => (
-                <button
-                  key={cat}
-                  className={`filter-pill ${agentFilter === cat ? 'active' : ''}`}
-                  onClick={() => setAgentFilter(cat)}
-                >
-                  {cat === 'All' ? `All (${agents.length})` : cat}
-                </button>
-              ))}
-            </div>
-
-            {/* Agent grid */}
-            <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
-              {filteredAgents.map((agent, i) => (
-                <div key={agent.name} className="agent-card animate-in" style={{ animationDelay: `${i * 0.04 + 0.2}s` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+            <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              {caseStudies.map((c, i) => (
+                <div key={i} className="case-card animate-in" style={{ animationDelay: `${i * 0.08 + 0.2}s` }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, marginBottom: 14 }}>
                     <span style={{
-                      width: 10, height: 10, borderRadius: '50%',
-                      background: categoryColors[agent.category] || '#000',
-                      flexShrink: 0,
-                    }} />
-                    <h4 style={{ fontSize: 14, fontWeight: 700 }}>{agent.name}</h4>
+                      fontSize: 11, fontWeight: 700, letterSpacing: 1.5, textTransform: 'uppercase',
+                      color: c.personal ? '#0E8174' : '#D94A00',
+                    }}>{c.sector}</span>
+                    <span style={{
+                      fontSize: 11, padding: '4px 12px', borderRadius: 999,
+                      border: '1px solid rgba(0,0,0,0.18)', color: 'rgba(0,0,0,0.55)',
+                      fontWeight: 600, whiteSpace: 'nowrap',
+                    }}>{c.metric}</span>
                   </div>
-                  <p style={{ fontSize: 12, color: 'rgba(0,0,0,0.6)', lineHeight: 1.5, paddingLeft: 18 }}>{agent.desc}</p>
+                  <h3 style={{
+                    fontSize: 'clamp(20px, 2.2vw, 26px)', fontWeight: 700,
+                    lineHeight: 1.15, marginBottom: 18, letterSpacing: '-0.01em',
+                  }}>{c.title}</h3>
+
+                  <div style={{ marginBottom: 14 }}>
+                    <div className="case-section-label">Problem</div>
+                    <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.65)', lineHeight: 1.6 }}>{c.problem}</p>
+                  </div>
+                  <div style={{ marginBottom: 14 }}>
+                    <div className="case-section-label">Approach</div>
+                    <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.65)', lineHeight: 1.6 }}>{c.approach}</p>
+                  </div>
+                  <div style={{ marginBottom: 18 }}>
+                    <div className="case-section-label">Outcome</div>
+                    <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.8)', fontWeight: 500, lineHeight: 1.6 }}>{c.outcome}</p>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 'auto' }}>
+                    {c.stack.map(s => (
+                      <span key={s} className="case-stack-pill">{s}</span>
+                    ))}
+                  </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== BLOCK 06: IMPACT (Blue) ===== */}
+        <section
+          id="impact"
+          className="snap-section"
+          ref={el => { sectionRefs.current['impact'] = el; }}
+          style={{
+            background: '#007AFF', color: '#fff', padding: '60px 60px',
+            flexDirection: 'column', alignItems: 'stretch',
+            minHeight: '100vh', height: 'auto',
+            position: 'relative', overflow: 'hidden',
+          }}
+        >
+          {/* Geometric wireframe: Data Visualization Grid */}
+          <div className="parallax-layer parallax-back">
+            <div className="bg-element wire-grid-drift" style={{
+              top: 0, left: 0, right: 0, bottom: 0,
+              backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)',
+              backgroundSize: '60px 60px',
+            }} />
+          </div>
+          <div className="parallax-layer parallax-mid">
+            {/* Vertical axis line full height right side */}
+            <div className="bg-element" style={{
+              top: 0, right: '15%', width: 1, height: '100%',
+              background: 'rgba(255,255,255,0.18)',
+            }} />
+            {/* Horizontal measurement lines with different lengths = chart bars */}
+            <div className="bg-element wire-line-draw" style={{
+              top: '22%', left: '5%', width: '58%', height: 2,
+              background: 'rgba(255,255,255,0.32)',
+            }} />
+            <div className="bg-element wire-line-draw-2" style={{
+              top: '38%', left: '5%', width: '42%', height: 2,
+              background: 'rgba(255,255,255,0.26)',
+            }} />
+            <div className="bg-element wire-line-draw-3" style={{
+              top: '54%', left: '5%', width: '72%', height: 2,
+              background: 'rgba(255,255,255,0.30)',
+            }} />
+            <div className="bg-element wire-line-draw" style={{
+              top: '70%', left: '5%', width: '35%', height: 2,
+              background: 'rgba(255,255,255,0.22)',
+              animationDelay: '3s',
+            }} />
+            {/* Large background circle top-right decorative */}
+            <div className="bg-element wire-breathe" style={{
+              top: '-10%', right: '-8%', width: 320, height: 320,
+              border: '2px solid rgba(255,255,255,0.14)',
+              borderRadius: '50%',
+            }} />
+          </div>
+          <div className="parallax-layer parallax-front">
+            {/* Data point nodes at end of each bar */}
+            <div className="bg-element wire-node" style={{
+              top: '21%', left: '63%', width: 12, height: 12,
+              borderRadius: '50%', background: 'rgba(255,255,255,0.45)',
+            }} />
+            <div className="bg-element wire-ring" style={{
+              top: '20%', left: '62%', width: 14, height: 14,
+              borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.30)',
+            }} />
+            <div className="bg-element wire-node-2" style={{
+              top: '37%', left: '47%', width: 10, height: 10,
+              borderRadius: '50%', background: 'rgba(255,255,255,0.38)',
+            }} />
+            <div className="bg-element wire-node-3" style={{
+              top: '53%', left: '77%', width: 12, height: 12,
+              borderRadius: '50%', background: 'rgba(255,255,255,0.42)',
+            }} />
+            <div className="bg-element wire-ring-2" style={{
+              top: '52%', left: '76%', width: 14, height: 14,
+              borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.28)',
+            }} />
+          </div>
+
+          <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
+            <BlockPill num="06" />
+            <h2 className="animate-in" style={{
+              fontSize: 'clamp(36px, 6vw, 72px)',
+              fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
+              textTransform: 'uppercase', marginTop: 24, marginBottom: 40,
+            }}>
+              Impact
+            </h2>
+
+            <div className="grid-3col stat-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+              {stats.map((s, i) => {
+                const { count, ref } = useCountUp(s.value, 2000);
+                return (
+                  <div key={i} ref={ref} className="stat-card animate-in" style={{ animationDelay: `${i * 0.08}s` }}>
+                    <div style={{ fontSize: 48, fontWeight: 700, lineHeight: 1, marginBottom: 12, color: '#007AFF' }}>
+                      {s.prefix || ''}{count}{s.suffix}
+                    </div>
+                    <p style={{ fontSize: 14, lineHeight: 1.5, color: 'rgba(0,0,0,0.6)' }}>{s.label}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Recognition */}
+            <div style={{ marginTop: 48 }}>
+              <h3 className="animate-in" style={{
+                fontSize: 13, fontWeight: 700, letterSpacing: 2,
+                textTransform: 'uppercase', marginBottom: 20, opacity: 0.85,
+                animationDelay: '0.5s',
+              }}>
+                Recognition
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                {recognition.map((r, i) => (
+                  <div key={i} className="recognition-row animate-in" style={{
+                    padding: '16px 0',
+                    borderTop: '2px solid rgba(255,255,255,0.25)',
+                    display: 'grid',
+                    gridTemplateColumns: '1fr auto',
+                    gap: 16,
+                    alignItems: 'start',
+                    animationDelay: `${i * 0.06 + 0.55}s`,
+                  }}>
+                    <div>
+                      <div style={{ fontSize: 16, fontWeight: 700 }}>{r.title}</div>
+                      <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', marginTop: 4 }}>{r.desc}</div>
+                    </div>
+                    <span style={{
+                      fontSize: 11, fontWeight: 700, letterSpacing: 1,
+                      padding: '4px 12px', borderRadius: 999,
+                      border: '1.5px solid rgba(255,255,255,0.4)',
+                      whiteSpace: 'nowrap',
+                    }}>
+                      {r.org}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
