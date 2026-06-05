@@ -76,9 +76,10 @@ const competencies = [
   { icon: '🔍', title: 'Talent Sourcing' },
   { icon: '⚙️', title: 'TA Operations' },
   { icon: '👥', title: 'People Leadership' },
+  { icon: '📡', title: 'Talent Intelligence' },
 ];
 
-const techStack = ['Buffer', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Claude Design', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'LinkedIn Talent Insights', 'MindStudio', 'Nano Banana', 'Netlify', 'NotebookLM', 'Notion AI', 'Perplexity', 'Prompt Engineering', 'Talent Neuron', 'Vercel'];
+const techStack = ['Buffer', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Claude Design', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'Granola', 'LinkedIn Talent Insights', 'MindStudio', 'Nano Banana', 'Netlify', 'NotebookLM', 'Notion AI', 'Obsidian', 'Perplexity', 'Talent Neuron', 'Vercel'];
 
 const projects = [
   { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/', img: `${import.meta.env.BASE_URL}screenshots/market-intel.png` },
