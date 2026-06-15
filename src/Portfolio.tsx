@@ -293,7 +293,7 @@ const Portfolio = () => {
           flex: 1;
           height: 100vh;
           overflow-y: scroll;
-          scroll-snap-type: y mandatory;
+          scroll-snap-type: y proximity;
           scroll-behavior: smooth;
         }
         .snap-container::-webkit-scrollbar { width: 0; }
