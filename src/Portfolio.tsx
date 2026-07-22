@@ -60,7 +60,7 @@ const stats = [
 ];
 
 const career = [
-  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', logo: 'kellanova.com', company: "Kellanova (previously Kellogg's)", desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%. Oversee hiring for 11 Corporate Functions, managing top performing team in North America. 91% offer accept rate across ~300 hires in 2024 and 2025. Owned the end-to-end product lifecycle for enterprise-wide interview evaluation frameworks, driving global adoption and $50K–$100K in cost avoidance.' },
+  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', logo: 'kellanova.com', company: "Kellanova (previously Kellogg's)", desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%, each routed through a governance layer requiring human review before an agent output reaches a candidate or hiring manager. Oversee hiring for 11 Corporate Functions, managing top performing team in North America. 91% offer accept rate across ~300 hires in 2024 and 2025. Owned the end-to-end product lifecycle for enterprise-wide interview evaluation frameworks, driving global adoption and $50K–$100K in cost avoidance.' },
   { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', logo: 'uber.com', company: 'Uber', desc: 'Promoted within six months, the only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
   { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', logo: 'bcg.com', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders. Only team member out of 45 promoted in 2020. Sourcing across NAMR, EMEA, and APAC.' },
   { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', logo: 'accenture.com', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units. Managed $60K conference budget.' },
@@ -79,7 +79,7 @@ const competencies = [
   { icon: '📡', title: 'Talent Intelligence' },
 ];
 
-const techStack = ['Buffer', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Claude Design', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'Granola', 'LinkedIn Talent Insights', 'MindStudio', 'Nano Banana', 'Netlify', 'NotebookLM', 'Notion AI', 'Obsidian', 'Perplexity', 'Talent Neuron', 'Vercel'];
+const techStack = ['Buffer', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Claude Design', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'Granola', 'Handy', 'LinkedIn Talent Insights', 'MindStudio', 'Nano Banana', 'Netlify', 'NotebookLM', 'Notion AI', 'Obsidian', 'Perplexity', 'Talent Neuron', 'Vercel'];
 
 const projects = [
   { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/', img: `${import.meta.env.BASE_URL}screenshots/market-intel.png` },
@@ -976,6 +976,9 @@ const Portfolio = () => {
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
                   12+ years of full life-cycle TA experience, including 5+ years leading high-performing teams, with a track record of leading cross-functional initiatives and influencing executive hiring strategy through data.
+                </p>
+                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
+                  My approach: scope through discovery, build for review before an agent acts, and measure everything in hours saved.
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
                   Certified MindStudio AI Agent Developer.
