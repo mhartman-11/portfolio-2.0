@@ -118,6 +118,15 @@ const caseStudies = [
     stack: ['Claude', 'Vercel'],
   },
   {
+    sector: 'Mortgage Lending',
+    title: 'Loan Officer Payroll Calculator',
+    problem: 'A mortgage owner and his business partner were figuring out loan officer commissions by hand in a spreadsheet every other Friday. Every officer had a different pay agreement, every loan carried different fees, and officers only get paid once an investor buys the loan. One wrong cell turned into a pay dispute with an employee.',
+    approach: 'Built a tool that reads the closing paperwork for each loan, even scanned copies from an office copier, and fills in the numbers automatically. Each officer’s pay agreement gets entered once and applies to every loan after that. Loans an investor has not bought yet stay out of the payroll run until they are paid for. When the run is finished, it produces a spreadsheet in the same format the team was already using. Everything stays on their own computer and is password protected.',
+    outcome: 'Cut a five-hour job shared between the owner and his partner every two weeks down to under thirty minutes, roughly 130 hours a year, and took the risk of a math mistake out of employee paychecks.',
+    metric: '~130 hrs/yr saved',
+    stack: ['PDF.js', 'Tesseract.js', 'SheetJS', 'Vercel'],
+  },
+  {
     sector: 'Plastics Manufacturing',
     title: 'Die Design Automation Tool',
     problem: 'The engineering team was manually translating PDF die specs into CAD-ready inputs, a slow and error-prone process that bottlenecked production.',
