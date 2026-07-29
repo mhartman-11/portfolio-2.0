@@ -1185,9 +1185,10 @@ const Portfolio = () => {
               </div>
               <p style={{ fontSize: 'clamp(14px, 1.4vw, 16px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.7)', maxWidth: 620, marginTop: 16, marginBottom: 24 }}>
                 MindStudio is a no-code platform for building AI agents: multi-step workflows that chain models,
-                data, and logic into something that runs on its own. I got into their AI Agent Builder Bootcamp,
-                under 500 accepted out of roughly 14,000 applicants. It put me in the wiring underneath agent
-                design: prompt chaining, routing logic, error handling. These are what came out of it.
+                data, and logic into something that runs on its own. I was selected for their AI Agent Builder
+                Bootcamp, one of under 500 accepted from roughly 14,000 applicants. It put me in the wiring
+                underneath agent design: prompt chaining, routing logic, error handling. These are what came
+                out of it.
               </p>
 
               {/* Filter pills */}
