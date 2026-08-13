@@ -1740,7 +1740,6 @@ const Portfolio = () => {
             <div className="animate-in stagger-2" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <a href="mailto:hartman1133@gmail.com" className="brutalist-btn brutalist-btn-dark">Email</a>
               <a href="https://www.linkedin.com/in/mike-hartman-13614224" target="_blank" rel="noopener noreferrer" className="brutalist-btn brutalist-btn-light">LinkedIn</a>
-              <a href="https://github.com/mhartman-11" target="_blank" rel="noopener noreferrer" className="brutalist-btn brutalist-btn-light">GitHub</a>
             </div>
           </div>
         </section>
