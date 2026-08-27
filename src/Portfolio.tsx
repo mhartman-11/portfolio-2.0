@@ -39,12 +39,12 @@ const useCountUp = (end: number, duration = 2000) => {
 // ---------- DATA ----------
 const SECTIONS = [
   { id: 'hero', label: 'Welcome', num: '01', color: '#FF5C00' },
-  { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
-  { id: 'work', label: "What I've Built", num: '03', color: '#0C3A34' },
+  { id: 'expertise', label: 'Expertise', num: '02', color: '#1C1B2E' },
+  { id: 'work', label: "What I've Built", num: '03', color: '#00B3A4' },
   { id: 'career', label: 'Career', num: '04', color: '#17171C' },
-  { id: 'consulting', label: 'Case Studies', num: '05', color: '#00C853' },
-  { id: 'impact', label: 'Impact', num: '06', color: '#007AFF' },
-  { id: 'contact', label: 'Contact', num: '07', color: '#FFFF00' },
+  { id: 'consulting', label: 'Case Studies', num: '05', color: '#FFD400' },
+  { id: 'impact', label: 'Impact', num: '06', color: '#0B3B8C' },
+  { id: 'contact', label: 'Contact', num: '07', color: '#FFF8F4' },
 ];
 
 const companies = ['Kellanova', 'Uber', 'BCG', 'Accenture', 'Cars.com', 'Brooksource'];
@@ -177,9 +177,9 @@ const agents = [
 const agentCategories = ['All', ...Array.from(new Set(agents.map(a => a.category)))];
 
 const categoryColors: Record<string, string> = {
-  Sourcing: '#FF5C00', Intelligence: '#8A2BE2', Efficiency: '#007AFF',
-  Operations: '#000', Engagement: '#FF3B30', Social: '#00C853',
-  Branding: '#FF5C00', CX: '#007AFF', Enablement: '#8A2BE2', Evaluation: '#00C853',
+  Sourcing: '#FF5C00', Intelligence: '#5B21B6', Efficiency: '#0B3B8C',
+  Operations: '#000', Engagement: '#C4163A', Social: '#00897B',
+  Branding: '#FF5C00', CX: '#0B3B8C', Enablement: '#5B21B6', Evaluation: '#00897B',
 };
 
 // ---------- Block ID Pill ----------
@@ -271,8 +271,13 @@ const Portfolio = () => {
   const filteredAgents = agentFilter === 'All' ? agents : agents.filter(a => a.category === agentFilter);
 
   // Determine if nav label text should be dark based on section color
-  const lightColorSections = ['contact']; // yellow needs dark text
-  const darkTextForNav = (color: string) => color === '#FFFF00' || color === '#FFF8F4';
+  // Light grounds need dark nav text. Derived from relative luminance so adding a
+  // new section colour can't silently produce white-on-white.
+  const darkTextForNav = (hex: string) => {
+    const n = parseInt(hex.slice(1), 16);
+    const ch = (v: number) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
+    return 0.2126 * ch(n >> 16 & 255) + 0.7152 * ch(n >> 8 & 255) + 0.0722 * ch(n & 255) > 0.34;
+  };
 
   return (
     <div style={{ display: 'flex', height: '100vh', fontFamily: "'Space Grotesk', sans-serif", background: '#FFF8F4' }}>
@@ -334,17 +339,17 @@ const Portfolio = () => {
         .work-filter-pill {
           padding: 8px 20px;
           border-radius: 999px;
-          border: 2px solid rgba(255,255,255,0.3);
+          border: 2px solid rgba(0,0,0,0.35);
           background: transparent;
           font-family: 'Space Grotesk', sans-serif;
           font-size: 13px;
           font-weight: 600;
-          color: #fff;
+          color: #000;
           cursor: pointer;
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .work-filter-pill:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
-        .work-filter-pill.active { background: #fff; color: #000; }
+        .work-filter-pill:hover { background: rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.65); }
+        .work-filter-pill.active { background: #000; color: #fff; }
 
         .agent-card {
           background: #fff;
@@ -421,7 +426,7 @@ const Portfolio = () => {
         .spec-chip .spec-icon { font-size: 18px; line-height: 1; }
         .spec-chip .spec-dot {
           width: 7px; height: 7px; border-radius: 50%;
-          background: #FFFF00; flex-shrink: 0;
+          background: #FFD400; flex-shrink: 0;
         }
 
         .stat-card {
@@ -851,7 +856,7 @@ const Portfolio = () => {
                 <p style={{ fontSize: 'clamp(16px, 1.8vw, 20px)', fontWeight: 700, color: '#000', lineHeight: 1.35, marginTop: 10 }}>
                   Senior Manager, Talent Acquisition &amp; AI Enablement at Kellanova
                 </p>
-                <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.6)', marginTop: 12 }}>Greater Chicago Area</p>
+                <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.75)', marginTop: 12 }}>Greater Chicago Area</p>
               </div>
               {/* Headshot */}
               <div style={{
@@ -879,7 +884,7 @@ const Portfolio = () => {
           className="snap-section"
           ref={el => { sectionRefs.current['expertise'] = el; }}
           style={{
-            background: '#8A2BE2', color: '#fff', padding: '60px 60px',
+            background: '#1C1B2E', color: '#fff', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
             position: 'relative', overflow: 'hidden',
@@ -966,7 +971,7 @@ const Portfolio = () => {
 
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 60, alignItems: 'start' }}>
               <div className="animate-in stagger-1" style={{ borderLeft: '3px solid rgba(255,255,255,0.45)', paddingLeft: 24 }}>
-                <p style={{ fontSize: 'clamp(18px, 2vw, 22px)', lineHeight: 1.55, fontWeight: 600, color: '#fff', maxWidth: 560 }}>
+                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560 }}>
                   Talent acquisition leader and hands-on applied-AI builder with 13+ years across recruiting, sourcing, people leadership, market intelligence, and AI enablement.
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 18 }}>
@@ -985,7 +990,7 @@ const Portfolio = () => {
 
               <div className="animate-in stagger-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
                 <div>
-                  <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>Specializations</h4>
+                  <h4 style={{ fontSize: 15, fontWeight: 700, letterSpacing: 1.6, textTransform: 'uppercase', marginBottom: 16, opacity: 0.85 }}>Specializations</h4>
                   {competencies.map(c => (
                     <div key={c.title} className="spec-chip">
                       <span className="spec-icon">{c.icon}</span> {c.title}
@@ -993,7 +998,7 @@ const Portfolio = () => {
                   ))}
                 </div>
                 <div>
-                  <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>Employers</h4>
+                  <h4 style={{ fontSize: 15, fontWeight: 700, letterSpacing: 1.6, textTransform: 'uppercase', marginBottom: 16, opacity: 0.85 }}>Employers</h4>
                   {companies.map(c => (
                     <div key={c} className="spec-chip">
                       <span className="spec-dot" /> {c}
@@ -1005,11 +1010,11 @@ const Portfolio = () => {
 
             {/* Tooling, grouped by what it is actually used for */}
             <div className="animate-in stagger-3" style={{ marginTop: 40 }}>
-              <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 18, opacity: 0.7 }}>Tooling</h4>
+              <h4 style={{ fontSize: 15, fontWeight: 700, letterSpacing: 1.6, textTransform: 'uppercase', marginBottom: 18, opacity: 0.85 }}>Tooling</h4>
               <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22 }}>
                 {toolBuckets.map(b => (
                   <div key={b.group}>
-                    <div style={{ fontSize: 12, fontWeight: 700, color: '#FFFF00', marginBottom: 10, letterSpacing: 0.5 }}>{b.group}</div>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: '#FFD400', marginBottom: 10, letterSpacing: 0.3 }}>{b.group}</div>
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                       {b.tools.map(t => (
                         <span key={t} className="tech-pill" style={{ fontSize: 13, padding: '6px 14px' }}>{t}</span>
@@ -1028,7 +1033,7 @@ const Portfolio = () => {
           className="snap-section"
           ref={el => { sectionRefs.current['work'] = el; }}
           style={{
-            background: 'linear-gradient(165deg, #0F4A43 0%, #0B3631 60%, #07241F 100%)', color: '#fff', padding: '60px 60px',
+            background: '#00B3A4', color: '#000', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
             position: 'relative', overflow: 'hidden',
@@ -1038,7 +1043,7 @@ const Portfolio = () => {
           <div className="parallax-layer parallax-back">
             <div className="bg-element wire-grid-pulse" style={{
               top: 0, left: 0, right: 0, bottom: 0,
-              backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px)',
               backgroundSize: '40px 40px',
             }} />
           </div>
@@ -1046,63 +1051,63 @@ const Portfolio = () => {
             {/* Dramatic scan line */}
             <div className="bg-element wire-scan" style={{
               top: 0, left: 0, right: 0, height: 2,
-              background: 'linear-gradient(90deg, transparent 0%, rgba(255,92,0,0.50) 30%, rgba(255,255,255,0.60) 50%, rgba(255,92,0,0.50) 70%, transparent 100%)',
-              boxShadow: '0 0 20px rgba(255,255,255,0.30)',
+              background: 'linear-gradient(90deg, transparent 0%, rgba(255,92,0,0.65) 30%, rgba(0,0,0,0.45) 50%, rgba(255,92,0,0.65) 70%, transparent 100%)',
+              boxShadow: '0 0 20px rgba(0,0,0,0.16)',
             }} />
             {/* Large PCB rectangle top-right */}
             <div className="bg-element wire-breathe" style={{
               top: '8%', right: '5%', width: 200, height: 130,
-              border: '1.5px solid rgba(255,255,255,0.20)',
+              border: '1.5px solid rgba(0,0,0,0.20)',
               borderRadius: 4,
             }} />
             {/* Inner rectangle */}
             <div className="bg-element wire-breathe-2" style={{
               top: '13%', right: '8%', width: 140, height: 80,
-              border: '1px solid rgba(255,255,255,0.14)',
+              border: '1px solid rgba(0,0,0,0.14)',
               borderRadius: 3,
             }} />
             {/* L-shaped trace horizontal */}
             <div className="bg-element wire-line-draw" style={{
               top: '50%', left: 0, width: '22%', height: 2,
-              background: 'rgba(255,255,255,0.30)',
+              background: 'rgba(0,0,0,0.30)',
             }} />
             {/* L-shaped trace vertical */}
             <div className="bg-element wire-line-v" style={{
               top: '50%', left: '22%', width: 2, height: '18%',
-              background: 'rgba(255,255,255,0.24)',
+              background: 'rgba(0,0,0,0.24)',
             }} />
             {/* Second trace */}
             <div className="bg-element wire-line-draw-2" style={{
               top: '68%', left: '22%', width: '18%', height: 2,
-              background: 'rgba(255,255,255,0.22)',
+              background: 'rgba(0,0,0,0.22)',
             }} />
             {/* Bottom-right component square */}
             <div className="bg-element wire-breathe-3" style={{
               bottom: '12%', right: '8%', width: 90, height: 90,
-              border: '1.5px solid rgba(255,255,255,0.18)',
+              border: '1.5px solid rgba(0,0,0,0.18)',
             }} />
           </div>
           <div className="parallax-layer parallax-front">
             <div className="bg-element wire-node" style={{
               top: '50%', left: '22%', width: 10, height: 10,
-              background: 'rgba(255,255,255,0.40)', borderRadius: '50%',
+              background: 'rgba(0,0,0,0.40)', borderRadius: '50%',
             }} />
             <div className="bg-element wire-ring" style={{
               top: '49%', left: '21%', width: 12, height: 12,
-              border: '1.5px solid rgba(255,255,255,0.28)', borderRadius: '50%',
+              border: '1.5px solid rgba(0,0,0,0.28)', borderRadius: '50%',
             }} />
             <div className="bg-element wire-node-2" style={{
               top: '68%', left: '40%', width: 8, height: 8,
-              background: 'rgba(255,255,255,0.32)', borderRadius: '50%',
+              background: 'rgba(0,0,0,0.32)', borderRadius: '50%',
             }} />
             <div className="bg-element wire-node-3" style={{
               bottom: '12%', right: '8%', width: 6, height: 6,
-              background: 'rgba(255,255,255,0.28)',
+              background: 'rgba(0,0,0,0.28)',
             }} />
           </div>
 
           <div style={{ width: '100%', position: 'relative', zIndex: 1 }}>
-            <BlockPill num="03" />
+            <BlockPill num="03" dark />
             <h2 className="animate-in" style={{
               fontSize: 'clamp(36px, 6vw, 72px)',
               fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
@@ -1183,9 +1188,9 @@ const Portfolio = () => {
                 <h3 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
                   MindStudio AI Agents
                 </h3>
-                <span style={{ fontSize: 13, fontWeight: 700, padding: '6px 16px', borderRadius: 999, background: '#fff', color: '#0B3631' }}>15 deployed</span>
+                <span style={{ fontSize: 13, fontWeight: 700, padding: '6px 16px', borderRadius: 999, background: '#000', color: '#00B3A4' }}>15 deployed</span>
               </div>
-              <p style={{ fontSize: 'clamp(14px, 1.4vw, 16px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.7)', maxWidth: 620, marginTop: 16, marginBottom: 24 }}>
+              <p style={{ fontSize: 'clamp(14px, 1.4vw, 16px)', lineHeight: 1.7, color: 'rgba(0,0,0,0.7)', maxWidth: 620, marginTop: 16, marginBottom: 24 }}>
                 MindStudio is a no-code platform for building AI agents: multi-step workflows that chain models,
                 data, and logic into something that runs on its own. I was selected for their AI Agent Builder
                 Bootcamp, one of under 500 accepted from roughly 14,000 applicants. It put me in the wiring
@@ -1323,7 +1328,7 @@ const Portfolio = () => {
                       <span style={{
                         display: 'inline-block', marginTop: 6,
                         fontSize: 11, fontWeight: 700, letterSpacing: 1,
-                        color: '#FFFF00', textTransform: 'uppercase',
+                        color: '#FFD400', textTransform: 'uppercase',
                       }}>● Current</span>
                     )}
                     {role.logo && (
@@ -1344,7 +1349,7 @@ const Portfolio = () => {
                   </div>
                   <div>
                     <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>{role.title}</h3>
-                    <div style={{ fontSize: 15, fontWeight: 600, color: '#FFFF00', marginBottom: 8 }}>{role.company}</div>
+                    <div style={{ fontSize: 15, fontWeight: 600, color: '#FFD400', marginBottom: 8 }}>{role.company}</div>
                     <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{role.desc}</p>
                   </div>
                 </div>
@@ -1354,15 +1359,15 @@ const Portfolio = () => {
             {/* Education + Cert row */}
             <div className="grid-2col animate-in" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginTop: 40, animationDelay: '0.5s' }}>
               <div className="credential-card">
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FFFF00', marginBottom: 12 }}>Education</div>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FFD400', marginBottom: 12 }}>Education</div>
                 <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>University of Illinois at Urbana-Champaign</h4>
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Bachelor's Degree, 2008-2012. Major: Recreation, Sport & Tourism (Sport Management). Minor: Communication.</p>
               </div>
               <div className="credential-card">
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FFFF00', marginBottom: 12 }}>Certification</div>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#FFD400', marginBottom: 12 }}>Certification</div>
                 <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6 }}>MindStudio Level 3 AI Agent Developer</h4>
                 <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', marginBottom: 8 }}>Highest level of certification for AI agent architecture and deployment.</p>
-                <a href="https://www.virtualbadge.io/certificate-validator?credential=40f1426b-e1a1-405d-96bd-03ebae42a977" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, fontWeight: 600, color: '#FFFF00', textDecoration: 'none' }}>Verify Credential ↗</a>
+                <a href="https://www.virtualbadge.io/certificate-validator?credential=40f1426b-e1a1-405d-96bd-03ebae42a977" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, fontWeight: 600, color: '#FFD400', textDecoration: 'none' }}>Verify Credential ↗</a>
               </div>
             </div>
           </div>
@@ -1374,7 +1379,7 @@ const Portfolio = () => {
           className="snap-section"
           ref={el => { sectionRefs.current['consulting'] = el; }}
           style={{
-            background: '#00C853', color: '#000', padding: '60px 60px',
+            background: '#FFD400', color: '#000', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
             position: 'relative', overflow: 'hidden',
@@ -1454,7 +1459,7 @@ const Portfolio = () => {
               <BlockPill num="05" dark />
               <span style={{
                 fontSize: 13, fontWeight: 700, padding: '6px 16px',
-                borderRadius: 999, background: '#000', color: '#00C853',
+                borderRadius: 999, background: '#000', color: '#FFD400',
               }}>{caseStudies.length} case studies</span>
             </div>
             <h2 className="animate-in" style={{
@@ -1520,7 +1525,7 @@ const Portfolio = () => {
           className="snap-section"
           ref={el => { sectionRefs.current['impact'] = el; }}
           style={{
-            background: '#007AFF', color: '#fff', padding: '60px 60px',
+            background: '#0B3B8C', color: '#fff', padding: '60px 60px',
             flexDirection: 'column', alignItems: 'stretch',
             minHeight: '100vh', height: 'auto',
             position: 'relative', overflow: 'hidden',
@@ -1604,7 +1609,7 @@ const Portfolio = () => {
                 const { count, ref } = useCountUp(s.value, 2000);
                 return (
                   <div key={i} ref={ref} className="stat-card animate-in" style={{ animationDelay: `${i * 0.08}s` }}>
-                    <div style={{ fontSize: 'clamp(30px, 7vw, 48px)', fontWeight: 700, lineHeight: 1, marginBottom: 12, color: '#007AFF', whiteSpace: 'nowrap' }}>
+                    <div style={{ fontSize: 'clamp(30px, 7vw, 48px)', fontWeight: 700, lineHeight: 1, marginBottom: 12, color: '#0B3B8C', whiteSpace: 'nowrap' }}>
                       {s.prefix || ''}{count}{s.suffix}
                     </div>
                     <p style={{ fontSize: 14, lineHeight: 1.5, color: 'rgba(0,0,0,0.6)' }}>{s.label}</p>
@@ -1657,7 +1662,7 @@ const Portfolio = () => {
           id="contact"
           className="snap-section"
           ref={el => { sectionRefs.current['contact'] = el; }}
-          style={{ background: '#FFFF00', color: '#000', padding: '60px 60px', position: 'relative', overflow: 'hidden' }}
+          style={{ background: '#FFF8F4', color: '#000', padding: '60px 60px', position: 'relative', overflow: 'hidden' }}
         >
           {/* Geometric wireframe: Signal Transmission */}
           <div className="parallax-layer parallax-back">
@@ -1773,7 +1778,7 @@ const Portfolio = () => {
               height: activeSection === section.id ? 16 : 10,
               borderRadius: 4,
               background: section.color,
-              border: section.color === '#FFF8F4' || section.color === '#FFFF00' ? '1px solid #000' : 'none',
+              border: darkTextForNav(section.color) ? '1px solid #000' : 'none',
               transition: 'all 0.3s',
             }} />
             <span style={{ fontSize: 8, fontWeight: 600, color: '#000', letterSpacing: 0.3 }}>
