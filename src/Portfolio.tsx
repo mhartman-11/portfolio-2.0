@@ -42,7 +42,7 @@ const SECTIONS = [
   { id: 'expertise', label: 'Expertise', num: '02', color: '#8A2BE2' },
   { id: 'work', label: "What I've Built", num: '03', color: '#0C3A34' },
   { id: 'career', label: 'Career', num: '04', color: '#17171C' },
-  { id: 'consulting', label: 'AI Consulting Case Studies', num: '05', color: '#00C853' },
+  { id: 'consulting', label: 'Case Studies', num: '05', color: '#00C853' },
   { id: 'impact', label: 'Impact', num: '06', color: '#007AFF' },
   { id: 'contact', label: 'Contact', num: '07', color: '#FFFF00' },
 ];
@@ -60,7 +60,7 @@ const stats = [
 ];
 
 const career = [
-  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', logo: 'kellanova.com', company: "Kellanova (previously Kellogg's)", desc: 'Pioneered AI Enablement and talent intelligence division within TA. Built and deployed 10+ custom AI agents enhancing recruiter productivity by 30%, each routed through a governance layer requiring human review before an agent output reaches a candidate or hiring manager. Oversee hiring for 11 Corporate Functions, managing top performing team in North America. 91% offer accept rate across ~300 hires in 2024 and 2025. Owned the end-to-end product lifecycle for enterprise-wide interview evaluation frameworks, driving global adoption and $50K–$100K in cost avoidance.' },
+  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', logo: 'kellanova.com', company: 'Kellanova, now part of Mars', desc: "Built Kellanova's AI Enablement and Talent Intelligence function from the ground up, deploying 10+ governed AI agents and workflows for an estimated 30% recruiter productivity lift. Lead hiring across 11 Corporate Functions and manage North America's top-performing TA team, holding a 91% offer acceptance rate. Led three enterprise interview-evaluation frameworks from prototype through global adoption, partnering with HR, Legal, and Compliance, generating ~$100K in cost avoidance." },
   { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', logo: 'uber.com', company: 'Uber', desc: 'Promoted within six months, the only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
   { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', logo: 'bcg.com', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders. Only team member out of 45 promoted in 2020. Sourcing across NAMR, EMEA, and APAC.' },
   { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', logo: 'accenture.com', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units. Managed $60K conference budget.' },
@@ -79,7 +79,14 @@ const competencies = [
   { icon: '📡', title: 'Talent Intelligence' },
 ];
 
-const techStack = ['Buffer', 'Canva', 'ChatGPT', 'Claude', 'Claude Code', 'Claude Cowork', 'Claude Design', 'Copilot', 'Gamma', 'Gemini', 'GitHub', 'Granola', 'Handy', 'LinkedIn Talent Insights', 'MindStudio', 'Nano Banana', 'Netlify', 'NotebookLM', 'Notion AI', 'Obsidian', 'Perplexity', 'Talent Neuron', 'Vercel'];
+const toolBuckets = [
+  { group: 'Build and ship', tools: ['Claude Code', 'Codex', 'GitHub', 'Vercel', 'Netlify'] },
+  { group: 'Agents and automation', tools: ['MindStudio', 'Claude API', 'Claude Cowork'] },
+  { group: 'Talent intelligence', tools: ['LinkedIn Talent Insights', 'Talent Neuron', 'Perplexity'] },
+  { group: 'Research and knowledge', tools: ['NotebookLM', 'Obsidian', 'Notion AI', 'Granola'] },
+  { group: 'Models and assistants', tools: ['Claude', 'ChatGPT', 'Gemini', 'Copilot'] },
+  { group: 'Design and content', tools: ['Claude Design', 'Canva', 'Gamma', 'Nano Banana', 'Buffer'] },
+];
 
 const projects = [
   { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/', img: `${import.meta.env.BASE_URL}screenshots/market-intel.png` },
@@ -100,56 +107,47 @@ const recognition = [
 
 const caseStudies = [
   {
+    sector: 'Plastics Manufacturing',
+    title: 'Die Design Automation',
+    problem: "A plastics manufacturer's design and quoting workflow ran on manual back-and-forth. Engineers were retyping PDF die specs into CAD inputs by hand before a single part reached production. Slow, easy to get wrong, and a bottleneck on every new job.",
+    approach: 'Scoped through structured discovery with defined inputs and outputs, then built a pre-production workflow tool that walks an engineer through the die specification before they open CAD. It ingests the PDF spec, pulls out the design parameters, and hands back CAD-ready inputs instead of a document to retype.',
+    outcome: 'Roughly 4 to 6 hours a week back per engineer, and a spec that lands in CAD already structured rather than transcribed by hand.',
+    metric: '~4-6 hrs/wk per engineer',
+    stack: ['Claude API', 'PDF parsing'],
+  },
+  {
     sector: 'Mortgage Lending',
     title: 'Automated Content Engine',
-    problem: 'A mortgage VP was producing LinkedIn and Facebook content by hand. Inconsistent cadence, no system, and a real time drain on a revenue-generating executive.',
-    approach: 'Built a bi-weekly content engine on the Claude API with a structured intake workflow, Perplexity-powered market research, voice-matched post generation, AI-generated image or video for each post, and Buffer integration for scheduling. Designed post formats tailored to a residential home buyer audience. The executive submits a brief; the engine handles the rest.',
-    outcome: 'Reduced content production time by an estimated 70%. The client went from sporadic posting to a steady, on-brand cadence, which has helped generate leads and made them a known voice in residential mortgage.',
-    metric: '~70% time saved',
+    problem: 'A mortgage VP was writing LinkedIn and Facebook posts by hand. No cadence, no system, and a steady time drain on someone who generates revenue.',
+    approach: 'A bi-weekly content engine: structured intake, market research, voice-matched drafting, an image or video per post, and scheduling. He submits a brief and the engine handles the rest.',
+    outcome: 'Cut content production time by an estimated 90% and replaced sporadic posting with a steady, on-brand cadence that has helped generate leads.',
+    metric: '~90% time saved',
     stack: ['Claude API', 'Perplexity', 'Image/Video Gen', 'Notion', 'Buffer', 'Vercel'],
   },
   {
     sector: 'Mortgage Lending',
     title: 'Conditions Email Generator',
-    problem: 'Loan officers were manually parsing conditions notices to figure out which party owed action (buyer, agent, or bank), then drafting individual emails to each. High volume, high error risk, and a real time drain.',
-    approach: 'Built a document parsing and email generation tool that ingests a conditions notice, identifies the responsible party per condition, renders the document, and drafts custom emails to the right recipients. Designed for non-technical users.',
-    outcome: 'Saves 5–7 hours per week in manual review and drafting time per loan officer.',
-    metric: '5–7 hrs/wk saved',
+    problem: 'Loan officers were reading conditions notices line by line to work out who owed action, the buyer, the agent, or the bank, then drafting a separate email to each. High volume, easy to get wrong.',
+    approach: 'A parser that reads the notice, flags the responsible party for each condition, and drafts the right email to each recipient. Built for non-technical users. The tool drafts, the officer sends.',
+    outcome: '5 to 7 hours a week back per loan officer.',
+    metric: '5-7 hrs/wk saved',
     stack: ['Claude', 'Vercel'],
-  },
-  {
-    sector: 'Mortgage Lending',
-    title: 'Loan Officer Payroll Calculator',
-    problem: 'A mortgage owner and his business partner were figuring out loan officer commissions by hand in a spreadsheet every other Friday. Every officer had a different pay agreement, every loan carried different fees, and officers only get paid once an investor buys the loan. One wrong cell turned into a pay dispute with an employee.',
-    approach: 'Built a tool that reads the closing paperwork for each loan, even scanned copies from an office copier, and fills in the numbers automatically. Each officer’s pay agreement gets entered once and applies to every loan after that. Loans an investor has not bought yet stay out of the payroll run until they are paid for. When the run is finished, it produces a spreadsheet in the same format the team was already using. Everything stays on their own computer and is password protected.',
-    outcome: 'Cut a five-hour job shared between the owner and his partner every two weeks down to under thirty minutes, roughly 130 hours a year, and took the risk of a math mistake out of employee paychecks.',
-    metric: '~130 hrs/yr saved',
-    stack: ['PDF.js', 'Tesseract.js', 'SheetJS', 'Vercel'],
-  },
-  {
-    sector: 'Plastics Manufacturing',
-    title: 'Die Design Automation Tool',
-    problem: 'The engineering team was manually translating PDF die specs into CAD-ready inputs, a slow and error-prone process that bottlenecked production.',
-    approach: 'Built a PDF-to-CAD macro tool that parses incoming die spec documents, extracts structured design parameters, and prepares them for downstream engineering use. Scoped through a structured discovery process with defined input and output requirements.',
-    outcome: 'Projected to eliminate 4–6 hours of manual engineering work per week.',
-    metric: '4–6 hrs/wk saved',
-    stack: ['Claude API'],
   },
   {
     sector: 'Global Logistics',
     title: 'Social Content System',
-    problem: 'A global logistics company needed consistent branded social content across LinkedIn but lacked the internal capacity to produce it at scale.',
-    approach: 'Designed and deployed an AI-powered content generation workflow tailored to the company’s brand voice and audience. Built repeatable post formats across content categories, enabling high-volume output without proportional time investment.',
-    outcome: 'Scaled branded content output across channels with a consistent publishing cadence.',
+    problem: 'A global logistics company wanted consistent branded content on LinkedIn but had no internal capacity to produce it at volume.',
+    approach: "An AI content workflow tuned to the company's voice and audience, with repeatable post formats across content categories.",
+    outcome: 'Scaled branded output to a steady publishing cadence without a matching increase in hours.',
     metric: 'Scaled output',
     stack: ['Claude'],
   },
   {
     sector: 'Personal Project',
     title: 'March Madness Player Pool Tracker',
-    problem: 'An 11-person friend group was spending hours each night updating spreadsheets by hand to track individual player scoring across tournament games. It was error-prone, slow, and it killed the fun of following along in real time.',
-    approach: 'Built a fully interactive web app with live scoring updates, a 222-player pool dashboard, projected points, and filters by seed, region, and health status. Replaced the nightly spreadsheet grind with a real-time experience the whole group could follow together.',
-    outcome: 'Eliminated hours of nightly manual work and turned a chore into something the whole group looked forward to. The build proved production-grade, user-facing tools are achievable outside a formal engineering team, and it has since sparked inbound interest from businesses wanting similar builds.',
+    problem: 'An 11-person friend group was hand-updating spreadsheets every night to track player scoring across tournament games. Slow, error-prone, and it killed the fun of following along.',
+    approach: 'An interactive web app with live scoring, a 222-player pool dashboard, projected points, and filters by seed, region, and health status.',
+    outcome: 'Replaced the nightly spreadsheet grind with something the whole group looked forward to. It also proved production-grade, user-facing tools are achievable outside a formal engineering team, and it has since drawn inbound interest from businesses wanting similar builds.',
     metric: 'Shipped fast',
     stack: ['React', 'Next.js', 'Claude API'],
     personal: true,
@@ -847,11 +845,11 @@ const Portfolio = () => {
             </h1>
             <div className="animate-in stagger-2" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginTop: 32, flexWrap: 'wrap', gap: 24 }}>
               <div>
-                <p style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 700, color: '#000', lineHeight: 1.3 }}>
-                  Senior Manager, TA & AI Enablement at Kellanova.
+                <p style={{ fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 700, color: '#000', lineHeight: 1.25 }}>
+                  Talent Engineer | Applied AI | Talent Intelligence
                 </p>
-                <p style={{ fontSize: 'clamp(16px, 1.8vw, 20px)', fontWeight: 700, color: '#000', lineHeight: 1.3, marginTop: 6 }}>
-                  Founder, Hartman AI LLC.
+                <p style={{ fontSize: 'clamp(16px, 1.8vw, 20px)', fontWeight: 700, color: '#000', lineHeight: 1.35, marginTop: 10 }}>
+                  Senior Manager, Talent Acquisition &amp; AI Enablement at Kellanova
                 </p>
                 <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.6)', marginTop: 12 }}>Greater Chicago Area</p>
               </div>
@@ -969,22 +967,19 @@ const Portfolio = () => {
             <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 60, alignItems: 'start' }}>
               <div className="animate-in stagger-1" style={{ borderLeft: '3px solid rgba(255,255,255,0.45)', paddingLeft: 24 }}>
                 <p style={{ fontSize: 'clamp(18px, 2vw, 22px)', lineHeight: 1.55, fontWeight: 600, color: '#fff', maxWidth: 560 }}>
-                  Talent Acquisition leader at the intersection of AI and recruiting. I apply AI tools and workforce intelligence to sharpen how organizations attract, evaluate, and hire talent.
+                  Talent acquisition leader and hands-on applied-AI builder with 13+ years across recruiting, sourcing, people leadership, market intelligence, and AI enablement.
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 18 }}>
-                  Building daily in Claude Code and Cowork across AI agents, automation workflows, and custom tools. I built Kellanova's talent intelligence capability from the ground up and trained global recruiting teams on practical AI use.
+                  Building daily in Claude and ChatGPT across AI agents, automation workflows, and custom tools. I built Kellanova's AI Enablement and Talent Intelligence function from the ground up, deploying governed agents and workflows, training global recruiting teams, and turning emerging AI capabilities into practical operating improvements.
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
-                  12+ years of full life-cycle TA experience, including 5+ years leading high-performing teams, with a track record of leading cross-functional initiatives and influencing executive hiring strategy through data.
+                  That work sits inside an emerging discipline called <strong style={{ fontWeight: 700, color: '#fff' }}>talent engineering</strong>: deep recruiting expertise combined with AI, automation, workflow design, governance, and adoption, to build the systems talent teams actually run on.
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
-                  My approach: scope through discovery, build for review before an agent acts, and measure everything in hours saved.
+                  I also build independently for small business clients outside my day job, which is where a lot of the hands-on shipping happens. My approach: scope through discovery, build for review before an agent acts, and measure everything in hours saved.
                 </p>
                 <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
-                  Certified MindStudio AI Agent Developer.
-                </p>
-                <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: 560, marginTop: 16 }}>
-                  Founder of <strong style={{ fontWeight: 700, color: '#fff' }}>Hartman AI LLC</strong>, an AI consulting practice where I build custom agents and automation tools for small businesses.
+                  Certified MindStudio Level 3 AI Agent Developer.
                 </p>
               </div>
 
@@ -1008,12 +1003,19 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* AI Tech Stack */}
+            {/* Tooling, grouped by what it is actually used for */}
             <div className="animate-in stagger-3" style={{ marginTop: 40 }}>
-              <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16, opacity: 0.7 }}>AI Tech Stack</h4>
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                {techStack.map((t, i) => (
-                  <span key={t} className="tech-pill tech-pill-float" style={{ animationDelay: `${i * 0.15}s` }}>{t}</span>
+              <h4 style={{ fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 18, opacity: 0.7 }}>Tooling</h4>
+              <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 22 }}>
+                {toolBuckets.map(b => (
+                  <div key={b.group}>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: '#FFFF00', marginBottom: 10, letterSpacing: 0.5 }}>{b.group}</div>
+                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                      {b.tools.map(t => (
+                        <span key={t} className="tech-pill" style={{ fontSize: 13, padding: '6px 14px' }}>{t}</span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -1460,7 +1462,7 @@ const Portfolio = () => {
               fontWeight: 700, lineHeight: 1, letterSpacing: '-0.02em',
               textTransform: 'uppercase', marginTop: 24, marginBottom: 20,
             }}>
-              AI Consulting: Case Studies
+              Case Studies
             </h2>
             <p className="animate-in stagger-1" style={{
               fontSize: 'clamp(15px, 1.5vw, 18px)', lineHeight: 1.7,
