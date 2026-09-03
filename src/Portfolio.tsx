@@ -88,7 +88,11 @@ const toolBuckets = [
   { group: 'Design and content', tools: ['Claude Design', 'Canva', 'Gamma', 'Nano Banana', 'Buffer'] },
 ];
 
-const projects = [
+// Req Check ships the "Press" variant, served at the deploy root (index.html).
+const SIGNAL_URL = 'https://req-check-mh.vercel.app';
+
+const allProjects = [
+  { category: 'TA Tools', tag: 'MARKET INTELLIGENCE', title: 'Req Check', desc: 'Reads live job postings for any title and returns what it pays, what else it is called, who is hiring, and five search strings.', metric: 'Market briefing', url: SIGNAL_URL, img: `${import.meta.env.BASE_URL}screenshots/signal.svg` },
   { category: 'TA Tools', tag: 'TALENT INTELLIGENCE', title: 'Market Intelligence Dashboard', desc: 'Configurable dashboard tracking real-time industry layoffs, talent supply/demand, and competitor hiring activity.', metric: 'Real-time data', url: 'https://talent-intel-dashboard.pages.dev/', img: `${import.meta.env.BASE_URL}screenshots/market-intel.png` },
   { category: 'TA Tools', tag: 'INTERACTIVE TOOL', title: 'Recruiter Prompt Dashboard', desc: 'Browser-based dashboard with 150 ready-to-use AI prompts for recruiters with real-time search.', metric: '150+ prompts', url: 'https://recruiter-prompt-library-mh.netlify.app/', img: `${import.meta.env.BASE_URL}screenshots/recruiter-prompt.png` },
   { category: 'TA Tools', tag: 'FEATURED WORK', title: 'AI in TA Digest (2026)', desc: 'Curated weekly insight into the convergence of recruitment operations and agentic AI.', metric: 'Weekly digest', url: 'https://ai-in-ta-digest-mh.netlify.app/', img: `${import.meta.env.BASE_URL}screenshots/ai-digest.png` },
@@ -153,6 +157,13 @@ const caseStudies = [
     personal: true,
   },
 ];
+
+// Anything without a real URL stays off the site until it has one.
+const projects = allProjects.filter(p => Boolean(p.url));
+
+if (import.meta.env.DEV && !SIGNAL_URL) {
+  console.warn('[portfolio] Req Check is hidden: SIGNAL_URL is empty. Deploy the tool and set it in src/Portfolio.tsx.');
+}
 
 const projectCategories = ['All', 'TA Tools', 'AI Projects'];
 

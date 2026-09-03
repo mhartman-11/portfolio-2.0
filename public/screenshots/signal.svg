@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Signal, live sourcing intelligence tool">
+  <defs>
+    <style>
+      .d{font-family:'Archivo Black',Impact,sans-serif;font-weight:900}
+      .m{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+      .s{font-family:'Space Grotesk',system-ui,sans-serif}
+    </style>
+    <radialGradient id="halo" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#EFE6DD"/>
+      <stop offset="100%" stop-color="#E6DACE"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="#FBF4ED"/>
+
+  <!-- masthead -->
+  <rect width="800" height="152" fill="#1B3B52"/>
+  <text class="d" x="30" y="104" font-size="90" fill="#FBF4ED" letter-spacing="-3.5">REQ CHECK</text>
+  <text class="m" x="588" y="40" font-size="11" fill="#FBF4ED" letter-spacing="1.8" opacity=".9">MARKET BRIEFING</text>
+  <text class="m" x="588" y="56" font-size="11" fill="#FBF4ED" letter-spacing="1.8" opacity=".9">BEFORE THE REQ</text>
+  <line x1="30" y1="120" x2="770" y2="120" stroke="#FBF4ED" stroke-width="2.5"/>
+  <g class="m" font-size="8.5" fill="#FBF4ED" opacity=".92">
+    <text x="30" y="139">01 TYPE A ROLE</text>
+    <text x="178" y="139">02 PULL LIVE POSTINGS</text>
+    <text x="366" y="139">03 MINE THE SKILLS</text>
+    <text x="536" y="139">04 MAP DEMAND</text>
+    <text x="674" y="139">05 GET STRINGS</text>
+  </g>
+
+  <!-- pipeline -->
+  <rect x="0" y="152" width="800" height="54" fill="#130E0A"/>
+  <g class="m" font-size="9" letter-spacing="1">
+    <rect x="22" y="166" width="100" height="26" fill="#CD5E16"/><text x="30" y="183" fill="#FBF4ED">01 PARSE</text>
+    <rect x="130" y="166" width="100" height="26" fill="#CD5E16"/><text x="138" y="183" fill="#FBF4ED">02 MARKET</text>
+    <rect x="238" y="166" width="100" height="26" fill="#CD5E16"/><text x="246" y="183" fill="#FBF4ED">03 MINE</text>
+    <rect x="346" y="166" width="100" height="26" fill="#CD5E16"/><text x="354" y="183" fill="#FBF4ED">04 EXPAND</text>
+    <rect x="454" y="166" width="100" height="26" fill="#E3D612"/><text x="462" y="183" fill="#130E0A">05 SYNTH</text>
+    <rect x="562" y="166" width="94" height="26" fill="#241C15" stroke="#443830"/><text x="570" y="183" fill="#8A7C72">06 PEOPLE</text>
+    <rect x="664" y="166" width="112" height="26" fill="#241C15" stroke="#443830"/><text x="672" y="183" fill="#8A7C72">07 STRINGS</text>
+  </g>
+
+  <!-- graph -->
+  <g transform="translate(0,206)">
+    <rect width="512" height="294" fill="url(#halo)"/>
+    <g stroke="#130E0A" stroke-width="1" opacity=".24">
+      <path d="M126 112 L212 74 M126 112 L204 166 M212 74 L322 98 M204 166 L322 98 M322 98 L406 148 M204 166 L272 214 M272 214 L406 148 M126 112 L96 192 M96 192 L204 166 M322 98 L364 52 M406 148 L452 206 M272 214 L356 232"/>
+    </g>
+    <g stroke="#254BB2" stroke-width="1" stroke-dasharray="3 3" opacity=".55">
+      <path d="M406 148 L464 92 M364 52 L432 46"/>
+    </g>
+    <g stroke="#130E0A" stroke-width="1.4">
+      <circle cx="126" cy="112" r="18" fill="#CD5E16"/>
+      <circle cx="212" cy="74" r="13" fill="#CD5E16"/>
+      <circle cx="204" cy="166" r="14" fill="#CD5E16"/>
+      <circle cx="322" cy="98" r="15" fill="#E3D612"/>
+      <circle cx="406" cy="148" r="12" fill="#CD5E16"/>
+      <circle cx="272" cy="214" r="12" fill="#CD5E16"/>
+      <circle cx="96" cy="192" r="10" fill="#CD5E16"/>
+      <circle cx="364" cy="52" r="10" fill="#254BB2"/>
+      <circle cx="432" cy="46" r="8.5" fill="#254BB2"/>
+      <circle cx="464" cy="92" r="8.5" fill="#254BB2"/>
+      <circle cx="452" cy="206" r="8.5" fill="#CD5E16"/>
+      <circle cx="356" cy="232" r="8.5" fill="#CD5E16"/>
+    </g>
+    <g class="m" font-size="8.5" fill="#130E0A">
+      <text x="126" y="142" text-anchor="middle">machine learning</text>
+      <text x="322" y="126" text-anchor="middle">pytorch</text>
+      <text x="204" y="194" text-anchor="middle">data science</text>
+      <text x="406" y="174" text-anchor="middle">big data</text>
+    </g>
+    <text class="m" x="16" y="278" font-size="9" fill="#130E0A" opacity=".55" letter-spacing="1.3">40 TERMS · 99 CONNECTIONS</text>
+  </g>
+
+  <!-- trace -->
+  <g transform="translate(512,206)">
+    <rect width="288" height="294" fill="#130E0A"/>
+    <text class="d" x="16" y="28" font-size="13" fill="#FBF4ED">LIVE TRACE</text>
+    <g class="m" font-size="8" fill="#E3D612">
+      <text x="16" y="54">GET themuse.com/api/public/jobs</text>
+      <text x="16" y="70" opacity=".8">8/8 pages · 160 postings · 412ms</text>
+      <text x="16" y="90">GET jobicy.com/api/v2/remote-jobs</text>
+      <text x="16" y="106" opacity=".8">50 postings · 248ms</text>
+      <text x="16" y="126">GET api.stackexchange.com/tags</text>
+      <text x="16" y="142" opacity=".8">10 adjacent tags · 83ms</text>
+      <text x="16" y="162">GET hn.algolia.com/api/v1/search</text>
+      <text x="16" y="178" opacity=".8">2,160 matches · 393ms</text>
+      <text x="16" y="200" fill="#CD5E16">56 postings · 21 employers</text>
+      <text x="16" y="216" fill="#CD5E16">top five hold 54% of demand</text>
+      <text x="16" y="232" fill="#CD5E16">$155K to $215K posted band</text>
+    </g>
+    <line x1="16" y1="252" x2="272" y2="252" stroke="#FBF4ED" opacity=".3" stroke-width="1.5"/>
+    <text class="m" x="16" y="272" font-size="9" fill="#FBF4ED">DONE IN 1.6s</text>
+    <text class="m" x="272" y="272" font-size="9" fill="#FBF4ED" text-anchor="end" opacity=".65">NO API KEY</text>
+  </g>
+</svg>
