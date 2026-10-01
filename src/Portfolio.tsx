@@ -47,7 +47,7 @@ const SECTIONS = [
   { id: 'contact', label: 'Contact', num: '07', color: '#FFF8F4' },
 ];
 
-const companies = ['Kellanova', 'Uber', 'BCG', 'Accenture', 'Cars.com', 'Brooksource'];
+const companies = ['Mars / Kellanova', 'Uber', 'BCG', 'Accenture', 'Cars.com', 'Brooksource'];
 
 const stats = [
   { value: 91, suffix: '%', label: 'Offer accept rate in 2024 and 2025' },
@@ -59,13 +59,19 @@ const stats = [
   { value: 93, suffix: '%', label: 'Mansfield D&I attainment rate across verticals at Uber' },
 ];
 
+const favicon = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
+
 const career = [
-  { period: 'Mar 2024 – Present', current: true, title: 'Senior Manager, Talent Acquisition & AI Enablement', logo: 'kellanova.com', company: 'Kellanova, now part of Mars', desc: "Built Kellanova's AI Enablement and Talent Intelligence function from the ground up, deploying 10+ governed AI agents and workflows for an estimated 30% recruiter productivity lift. Lead hiring across 11 Corporate Functions and manage North America's top-performing TA team, holding a 91% offer acceptance rate. Led three enterprise interview-evaluation frameworks from prototype through global adoption, partnering with HR, Legal, and Compliance, generating ~$100K in cost avoidance." },
-  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Talent Sourcing Manager → Principal Talent Sourcer', logo: 'uber.com', company: 'Uber', desc: 'Promoted within six months, the only Sourcing Manager overseeing four verticals: Legal, Finance, People/Places, Core Services. Managed eight global direct reports, achieving 90% offer accept rate and 93% Mansfield D&I attainment.' },
-  { period: 'Aug 2017 – Jun 2021', current: false, title: 'Senior Talent Sourcer → Talent Sourcer', logo: 'bcg.com', company: 'Boston Consulting Group (BCG)', desc: 'Generated $850K cost savings through 30 global hires. Selected for secondment on in-house Executive Search Team supporting C-Suite stakeholders. Only team member out of 45 promoted in 2020. Sourcing across NAMR, EMEA, and APAC.' },
-  { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter, Sr. Analyst', logo: 'accenture.com', company: 'Accenture', desc: 'Led diversity recruiting strategy across Ethnicity, Gender, LGBT, and PwD pillars. Cross-functional D&I SME for six business units. Managed $60K conference budget.' },
-  { period: 'Aug 2014 – Sep 2015', current: false, title: 'Affiliate Account Manager', logo: 'cars.com', company: 'Cars.com', desc: 'Account management bridging sales and customer success in automotive digital marketplace.' },
-  { period: 'Aug 2012 – Aug 2014', current: false, title: 'Technical Recruiter', logo: 'brooksource.com', company: 'Brooksource', desc: 'Foundation in high-volume technical recruiting and client relationship management.' },
+  // ponytail: Kellanova mark is local, kellanova.com's favicon can't be trusted after the Mars acquisition
+  { period: 'Mar 2024 – Present', current: true, logos: [`${import.meta.env.BASE_URL}kellanova.svg`, favicon('mars.com')], logoNames: ['Kellanova', 'Mars'], company: 'Mars (acquired Kellanova, Dec 2025)', roles: [
+    { title: 'Global Talent Intelligence', period: 'Sep 2026 – Present', desc: 'Leading the build-out of global talent intelligence at Mars, using AI to connect internal TA data with external labor market data so workforce and hiring decisions start from real signals. Building AI agents and intelligence products that move the organization toward proactive talent planning. Partnering with global and regional sourcing, technology, and strategy teams to turn fragmented data into clear guidance for TA and business leaders.' },
+    { title: 'Senior Manager, Talent Acquisition | AI Enablement (Kellanova)', period: 'Mar 2024 – Aug 2026', desc: 'Led TA strategy and hiring for Corporate Functions across 11 divisions in North America. Created and led an AI Enablement and Talent Intelligence division within TA, using LLMs and TalentNeuron to drive data-backed decisions. Architected enterprise-wide interview guides adopted globally, standardizing evaluation in every region around cultural values and leadership behaviors. Ran global trainings and focus groups on sourcing with AI, interviewing best practices, and data-driven storytelling.' },
+  ] },
+  { period: 'Jun 2021 – Jul 2023', current: false, title: 'Principal Talent Sourcer → Talent Sourcing Manager', logos: [favicon('uber.com')], company: 'Uber', desc: 'Promoted to Manager within six months, leading up to eight Sourcers and Sr. Sourcers. Owned sourcing strategy across four verticals: Legal, Finance, People & Places, and Core Services. Ran QBRs with VPs and executive leadership on performance, diversity metrics, and forecasts. Project lead on candidate experience, outreach optimization, and sourcer and recruiter process improvement.' },
+  { period: 'Aug 2017 – Jun 2021', current: false, title: 'Talent Sourcer → Senior Talent Sourcer, Global Specialty Businesses', logos: [favicon('bcg.com')], company: 'Boston Consulting Group (BCG)', desc: 'Sourced 30+ hires globally across all business units, generating $850K+ in cost savings. Owned 8 to 12 reqs at a time across NAMR, EMEA, and APAC and managed three Talent Sourcers in NAMR. Selected for a six-month secondment on BCG\'s in-house Executive Search Team. Only recruitment team member promoted in 2020, out of 45 global colleagues.' },
+  { period: 'Sep 2015 – Aug 2017', current: false, title: 'Diversity Sourcing Recruiter', logos: [favicon('accenture.com')], company: 'Accenture', desc: 'Led diversity recruiting and sourcing strategy across Ethnicity, Gender, LGBT, and PwD pillars for experienced hires. Cross-functional D&I SME for six divisions: Technology, Operations, Financial Services, Products, Federal Services, and Sales. Ran Accenture\'s presence at national diversity conferences like Prospanica and National Black MBA, resulting in 20+ hires.' },
+  { period: 'Aug 2014 – Sep 2015', current: false, title: 'Affiliate Account Manager', logos: [favicon('cars.com')], company: 'Cars.com', desc: 'Consultant for 250+ dealer accounts in the Charlotte Observer and KHOU-TV Houston markets. Ran 125+ consultation calls a month helping franchise and independent dealerships get more out of Cars.com products.' },
+  { period: 'Aug 2012 – Aug 2014', current: false, title: 'Technical Recruiter', logos: [favicon('brooksource.com')], company: 'Brooksource', desc: 'Full life cycle recruiting of IT professionals for Fortune 500 clients across healthcare, CPG, retail, and finance. Recruiter and account manager for major accounts including Walgreens and CDW. Led all Chicago recruiters in weekly commissions for Q1 through Q3 of 2014.' },
 ];
 
 const competencies = [
@@ -865,7 +871,7 @@ const Portfolio = () => {
                   Talent Engineer | Applied AI | Talent Intelligence
                 </p>
                 <p style={{ fontSize: 'clamp(16px, 1.8vw, 20px)', fontWeight: 700, color: '#000', lineHeight: 1.35, marginTop: 10 }}>
-                  Senior Manager, Talent Acquisition &amp; AI Enablement at Kellanova
+                  Global Talent Intelligence at Mars
                 </p>
                 <p style={{ fontSize: 14, color: 'rgba(0,0,0,0.75)', marginTop: 12 }}>Greater Chicago Area</p>
               </div>
@@ -1342,27 +1348,44 @@ const Portfolio = () => {
                         color: '#FFD400', textTransform: 'uppercase',
                       }}>● Current</span>
                     )}
-                    {role.logo && (
-                      <div style={{
-                        marginTop: 12, width: 60, height: 60,
-                        background: '#fff', borderRadius: 12,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      }}>
-                        <img
-                          src={`https://www.google.com/s2/favicons?domain=${role.logo}&sz=256`}
-                          alt={`${role.company} logo`}
-                          width={40} height={40}
-                          loading="lazy"
-                          style={{ display: 'block' }}
-                        />
-                      </div>
-                    )}
+                    <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
+                      {role.logos.map((src, j) => (
+                        <div key={src} style={{
+                          width: 60, height: 60,
+                          background: '#fff', borderRadius: 12,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        }}>
+                          <img
+                            src={src}
+                            alt={`${role.logoNames?.[j] ?? role.company} logo`}
+                            width={40} height={40}
+                            loading="lazy"
+                            style={{ display: 'block' }}
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>{role.title}</h3>
-                    <div style={{ fontSize: 15, fontWeight: 600, color: '#FFD400', marginBottom: 8 }}>{role.company}</div>
-                    <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{role.desc}</p>
-                  </div>
+                  {role.roles ? (
+                    <div>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: '#FFD400', marginBottom: 12 }}>{role.company}</div>
+                      {role.roles.map((r, k) => (
+                        <div key={r.title} style={{ marginTop: k ? 20 : 0 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 16, flexWrap: 'wrap', marginBottom: 6 }}>
+                            <h3 style={{ fontSize: 18, fontWeight: 700 }}>{r.title}</h3>
+                            <span style={{ fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.6)', whiteSpace: 'nowrap' }}>{r.period}</span>
+                          </div>
+                          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{r.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div>
+                      <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>{role.title}</h3>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: '#FFD400', marginBottom: 8 }}>{role.company}</div>
+                      <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>{role.desc}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
